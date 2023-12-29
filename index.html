@@ -172,7 +172,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-12-29 04:08:22 / 修改时间：20:56:26" itemprop="dateCreated datePublished" datetime="2023-12-29T04:08:22+08:00">2023-12-29</time>
+      <time title="创建时间：2023-12-29 04:08:22 / 修改时间：21:20:28" itemprop="dateCreated datePublished" datetime="2023-12-29T04:08:22+08:00">2023-12-29</time>
     </span>
 
   
@@ -185,15 +185,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;最近找工作，觉得很多之前学习过的知识因为一段时间不使用就忘掉了，萌生了写下一些技术博客的想法，几番搜索，选择了免费的<a target="_blank" rel="noopener" href="https://pages.github.com/">gitHub Pages</a>作为博客服务器，简单实用，量小不收费。<br>&emsp;&emsp;博客工具选择了<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>，模板是<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">next</a>,在我的电脑本身安装有git和node.js的条件下，我几乎不用再安装什么，只要执行几个命令就可以完成对应的博客生成。</p>
+          <p>&emsp;最近找工作，觉得很多之前学习过的知识因为一段时间不使用就忘掉了，萌生了写下一些技术博客的想法，几番搜索，选择了免费的<a target="_blank" rel="noopener" href="https://pages.github.com/">gitHub Pages</a>作为博客服务器，简单实用，量小不收费。<br>&emsp;博客工具选择了<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>，模板是<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">next</a>,在我的电脑本身安装有git和node.js的条件下，我几乎不用再安装什么，只要执行几个命令就可以完成对应的博客生成。</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="安装Git和node-Js，网络上的教程非常多，我就不再赘述了。"><a href="#安装Git和node-Js，网络上的教程非常多，我就不再赘述了。" class="headerlink" title="安装Git和node.Js，网络上的教程非常多，我就不再赘述了。"></a>安装Git和node.Js，网络上的教程非常多，我就不再赘述了。</h3><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;这里帮你安装的是hexo-cli（Command Line Interface），我在windos机器上安装它，请注意cmd使用管理员权限打开，否则可能没有文件夹操控权限。<br>接下来你可以使用它你可以执行各种hexo命令。</p>
-<h3 id="hexo-init"><a href="#hexo-init" class="headerlink" title="hexo init"></a>hexo init</h3><p>进入你想存放博客的本地储存空间，并执行下面命令，即可完成hexo的项目路径的初始化。</p>
+<p>&emsp;这里帮你安装的是hexo-cli（Command Line Interface），我在windos机器上安装它，请注意cmd使用管理员权限打开，否则可能没有文件夹操控权限。接下来你可以使用它你可以执行各种hexo命令。</p>
+<h3 id="初始化博客空间"><a href="#初始化博客空间" class="headerlink" title="初始化博客空间"></a>初始化博客空间</h3><p>进入你想存放博客的本地储存空间，并执行下面命令，即可完成hexo的项目路径的初始化。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init ”your blog space name“</span><br></pre></td></tr></table></figure>
 <p>如下是我初始化完成的hexo项目空间</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">2023/12/29  04:09    &lt;DIR&gt;          .</span><br><span class="line">2023/12/29  04:08    &lt;DIR&gt;          ..</span><br><span class="line">2023/12/29  04:08    &lt;DIR&gt;          .github</span><br><span class="line">2023/12/29  04:08                89 .gitignore</span><br><span class="line">2023/12/29  16:49            77,729 db.json</span><br><span class="line">2023/12/29  04:11    &lt;DIR&gt;          node_modules</span><br><span class="line">2023/12/29  04:11            93,865 package-lock.json</span><br><span class="line">2023/12/29  04:11               654 package.json</span><br><span class="line">2023/12/29  04:13    &lt;DIR&gt;          public</span><br><span class="line">2023/12/29  04:08    &lt;DIR&gt;          scaffolds</span><br><span class="line">2023/12/29  04:08    &lt;DIR&gt;          source</span><br><span class="line">2023/12/29  04:08    &lt;DIR&gt;          themes</span><br><span class="line">2023/12/29  04:08                 0 _config.landscape.yml</span><br><span class="line">2023/12/29  04:24             2,623 _config.yml</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;如果你不需要改变博客主题风格，你可以直接跳转到下面的<code>创建新文章</code>的章节中，如果你想使用其他风格，可以从[hexo的主题库]（<a target="_blank" rel="noopener" href="https://hexo.io/themes/%EF%BC%89%E4%B8%AD%E9%80%89%E6%8B%A9%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%B8%BB%E9%A2%98%E3%80%82">https://hexo.io/themes/）中选择并添加其他风格的主题。</a></p>
+<p>&emsp;如果你不需要改变博客主题风格，你可以直接跳转到下面的<code>创建新文章</code>的章节中，如果你想使用其他风格，可以从[hexo的主题库]（<a target="_blank" rel="noopener" href="https://hexo.io/themes/%EF%BC%89%E4%B8%AD%E9%80%89%E6%8B%A9%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%B8%BB%E9%A2%98%E3%80%82">https://hexo.io/themes/）中选择并添加其他风格的主题。</a></p>
 <h3 id="添加next主题"><a href="#添加next主题" class="headerlink" title="添加next主题"></a>添加next主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
 <p>接着修改目录文件中的_config.yml文件，修改其中的<code>theme</code>一项为<code>next</code>.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
@@ -203,9 +203,22 @@
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate  </span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 <p>它将帮你把写好的整个项目生成对应的静态页面文件，用于部署给其他人查看。具体参照: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="运行本地服务"><a href="#运行本地服务" class="headerlink" title="运行本地服务"></a>运行本地服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<p>它将运行一个本地服务，使你可以在本地查看（默认使用localhost:4000）你编译好的静态网页文件，具体参照: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>首先先将gitHub pages功能准备好，这里可以参照<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/quickstart">gitHub pages</a>，按照文档要求执行下面操作<br>1.建立名为 &lt;你的 GitHub 用户名&gt;.github.io 的储存库，创建代码空间。<br>2.进入对应的储存库，在储存库中前往 <code>Settings &gt; Pages &gt; Source</code>，并将<code> Source</code> 改为<code> GitHub Actions</code>选好对应的Branch并保存发布。<br>3.将你的本地博客上传到github对应的空间</p>
-<p>具体参照: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">Deployment</a></p>
+<p>它将运行一个本地服务，使你可以在本地查看（默认使用localhost:4000）你编译好的静态网页文件，帮助你修改文章，如果不需要本地查看，可以不执行此操作。具体参照: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>首先先将gitHub pages功能准备好，这里可以参照<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/quickstart">gitHub pages</a>，按照文档要求执行下面操作<br>建立名为 &lt;你的 GitHub 用户名&gt;.github.io 的储存库，创建代码空间。<br>进入对应的储存库，在储存库中前往 <code>Settings &gt; Pages &gt; Source</code>，并将<code> Source</code> 改为<code> deploy from a branch</code>，选好对应的Branch并保存发布。</p>
+<p>安装 hexo-deployer-git。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>在 <code>_config.yml</code> 中添加以下配置（如果配置已经存在，请将其替换为如下）:</p>
+<pre><code class="bash">deploy:
+  type: git
+  repo: https://github.com/&lt;username&gt;/&lt;project&gt;
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: gh-pages
+``` bash
+执行 hexo clean &amp;&amp; hexo deploy 。
+浏览 &lt;GitHub 用户名&gt;.github.io 检查你的网站能否运作
+
+具体参照: [Deployment](https://hexo.io/zh-cn/docs/github-pages#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2)
+</code></pre>
 
       
     </div>
