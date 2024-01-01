@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在使用MySQL数据库的过程中遇到了一个锁的问题，因为当时技术水平不够，一直未能找到bug原因，后经人指点才理解问题。简化问题模型如下： 有user表和book表。 当一个任务进行时，我都先根据user的account_id字段锁定user表的行记录；然后根据account_id修改user表的数据，并也修改book表的数据，这两个修改在同一个事务中进行。 那么，我想当然认为，如果每个线程的操作都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有关mysql锁的一场深刻认知">
+<meta property="og:url" content="http://example.com/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/index.html">
+<meta property="og:site_name" content="kunzhidao">
+<meta property="og:description" content="在使用MySQL数据库的过程中遇到了一个锁的问题，因为当时技术水平不够，一直未能找到bug原因，后经人指点才理解问题。简化问题模型如下： 有user表和book表。 当一个任务进行时，我都先根据user的account_id字段锁定user表的行记录；然后根据account_id修改user表的数据，并也修改book表的数据，这两个修改在同一个事务中进行。 那么，我想当然认为，如果每个线程的操作都">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-01T16:33:15.000Z">
+<meta property="article:modified_time" content="2024-01-01T17:13:46.068Z">
+<meta property="article:author" content="kun">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/","path":"2024/01/02/有关mysql锁的一场深刻认知/","title":"有关mysql锁的一场深刻认知"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>有关mysql锁的一场深刻认知 | kunzhidao</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kunzhidao</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">再学一点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">kun</p>
+  <div class="site-description" itemprop="description">一个远程工作机会，记录学习笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kunzhidao">
+      <meta itemprop="description" content="一个远程工作机会，记录学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="有关mysql锁的一场深刻认知 | kunzhidao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          有关mysql锁的一场深刻认知
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-01-02 00:33:15 / 修改时间：01:13:46" itemprop="dateCreated datePublished" datetime="2024-01-02T00:33:15+08:00">2024-01-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在使用MySQL数据库的过程中遇到了一个锁的问题，因为当时技术水平不够，一直未能找到bug原因，后经人指点才理解问题。简化问题模型如下：</p>
+<p>有<code>user</code>表和<code>book</code>表。</p>
+<p>当一个任务进行时，我都先根据<code>user</code>的<code>account_id</code>字段锁定<code>user</code>表的行记录；然后根据<code>account_id</code>修改<code>user</code>表的数据，并也修改<code>book</code>表的数据，这两个修改在同一个事务中进行。</p>
+<p>那么，我想当然认为，如果每个线程的操作都按照上面所述进行操作，每次事务中的SQL都顺序执行，就不会产生数据错误。</p>
+<p>但实际上并不是这么回事儿，在实际程序执行中，修改<code>book</code>表的结果有误，并未读取到之前事务提交后的数据结果。</p>
+<p>具体测试和思路如下方代码：</p>
+<span id="more"></span>
+
+<p>一、问题背景<br>业务事务模型序列如下<br>设置事务隔离级别为read-commited<br>set autocommit&#x3D;0;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> `counter` <span class="keyword">from</span> `t_user` <span class="keyword">where</span> `account_id` <span class="operator">=</span> $userId <span class="keyword">for</span> <span class="keyword">update</span>; （语句一）</span><br><span class="line"><span class="keyword">select</span> `num` <span class="keyword">from</span> `t_book` <span class="keyword">where</span>   `ba_id` <span class="operator">=</span> <span class="number">1</span>; （语句二）</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>此处取得counter num 相同，记为N，若不同则打印两个值，并退出程序</span><br><span class="line"><span class="keyword">update</span> `t_user` <span class="keyword">set</span> counter<span class="operator">=</span>N<span class="operator">+</span><span class="number">1</span> <span class="keyword">where</span> `account_id` <span class="operator">=</span> $userId;</span><br><span class="line"><span class="keyword">update</span> `t_book` <span class="keyword">set</span> num<span class="operator">=</span>N<span class="operator">+</span><span class="number">1</span> <span class="keyword">where</span>   `ba_id` <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
+
+<p>二、分析</p>
+<p>这个程序有一个假设，认为语句一for update以后，后面的语句都是串行 （结论一），<br>因此如果语句一得到了t_user更新后的值，则 语句二得到的一定是t_book 更新后的值（结论二）。</p>
+<p>实际上结论一正确，结论二是在临界条件下是错误的。</p>
+<p>1、 行锁<br>InnoDB支持行锁，在多个线程对同一行加排他锁的时候，只有一个线程能够进入，就是上面的语句一的本意。<br>行锁在事务提交(commit语句)的时候释放</p>
+<p>2、可见性<br>本业务把事务隔离级别设置为read-commited， 也就是说，一个事务提交后，它的更新才能被其他事务看见。</p>
+<p><strong>但是</strong>， “提交”并不是一个原子动作，它包含一系列操作。<br>在我们这个例子中，需要关注的两个操作是<br>a) 解除行锁<br>b) 设置行的可见状态（也就是说，标记着是个提交的行，可以被读）</p>
+<p>在InnoDB的实现中，就是先 a) 后 b)</p>
+<p>3、一致性读和当前读<br>对于一个普通的查询，没有带for update 或lock in share mode， 它是否可以读取某一行的最新值，取决于语句开始时，这一行上的最新事务是否提交，<br>在我们的细分讨论里，就是是否过了 b) 阶段。也就是说，可能读到的是旧值。</p>
+<p>而对于一个有for update 的语句，使用当前读，读到的是最新值。</p>
+<p>3、于是我们来假设一下一个临界状态</p>
+<p>我们假设事务1和事务2， 事务1先执行，在事务1的commit语句执行前，事务2一定是被阻塞在语句一。<br>然后事务1进入commit逻辑。</p>
+<p>  时刻1: 事务1.解除行锁()<br>  时刻2: 事务2.语句一()  &#x2F;&#x2F;有 for update， 得到新值 24314148<br>  时刻3: 事务2.语句二()  &#x2F;&#x2F;普通读，得到旧值 24314147<br>  时刻4: 事务1.设置可见性</p>
+<p>三、时序验证<br>以出问题时候的语句时序来说明上述分析。</p>
+<p>事务1 (origin_time 和 latency 时间单位都是us)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">check_rows:<span class="number">0</span></span><br><span class="line">db:bts</span><br><span class="line">fail:<span class="number">0</span></span><br><span class="line">hash:<span class="number">-1534370821</span></span><br><span class="line">ip:<span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span></span><br><span class="line">isbind:<span class="number">0</span></span><br><span class="line">latency:<span class="number">745</span></span><br><span class="line">origin_time:<span class="number">1466775902855514</span></span><br><span class="line">return_rows:<span class="number">0</span></span><br><span class="line"><span class="keyword">sql</span>:committ</span><br><span class="line">id:<span class="number">2387</span></span><br><span class="line">update_rows:<span class="number">0</span></span><br><span class="line"><span class="keyword">user</span>:bts</span><br></pre></td></tr></table></figure>
+<p>事务2</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">check_rows:<span class="number">1</span></span><br><span class="line">db:bts</span><br><span class="line">fail:<span class="number">0</span></span><br><span class="line">hash:<span class="number">-1727747838</span></span><br><span class="line">ip:<span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span></span><br><span class="line">isbind:<span class="number">0</span></span><br><span class="line">latency:<span class="number">16123</span></span><br><span class="line">origin_time:<span class="number">1466775902839750</span></span><br><span class="line">return_rows:<span class="number">1</span></span><br><span class="line"><span class="keyword">sql</span>:<span class="keyword">select</span></span><br><span class="line">counter <span class="keyword">from</span></span><br><span class="line">t_user <span class="keyword">where</span></span><br><span class="line">account_id <span class="operator">=</span> <span class="string">&#x27;******************&#x27;</span> <span class="keyword">for</span> <span class="keyword">update</span></span><br><span class="line">tid:<span class="number">2383</span></span><br><span class="line">update_rows:<span class="number">18446744073709551615</span></span><br><span class="line"><span class="keyword">user</span>:bts</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">check_rows:<span class="number">1</span></span><br><span class="line">db:bts</span><br><span class="line">fail:O</span><br><span class="line">hash:<span class="number">1683935765</span></span><br><span class="line">ip:<span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span>.<span class="operator">*</span><span class="operator">*</span></span><br><span class="line">isbind:<span class="number">0</span></span><br><span class="line">latency:<span class="number">87</span></span><br><span class="line">origin_time:<span class="number">1466775902856178</span></span><br><span class="line">return_rows:<span class="number">1</span></span><br><span class="line"><span class="keyword">sql</span>:<span class="keyword">select</span></span><br><span class="line">num <span class="keyword">from</span></span><br><span class="line">t_book <span class="keyword">where</span></span><br><span class="line">ba_id <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">tid:<span class="number">2383</span></span><br><span class="line">update_rows:<span class="number">18446744073709551615</span></span><br><span class="line"><span class="keyword">user</span>:bts</span><br></pre></td></tr></table></figure>
+<p>时间先后上：<br>   事务1.commit.start   —&gt;  事务2.语句一.start&amp;end —&gt; 事务2.语句2.start&amp;end —&gt; 事务1.commit.end</p>
+<p>四、解决建议</p>
+<p>在语句2上加lock in share mode 或者 for update</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/30/mysql%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE%E8%B7%AF%E5%BE%84/" rel="prev" title="mysql更改数据路径">
+                  <i class="fa fa-angle-left"></i> mysql更改数据路径
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kun</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -122,7 +122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -149,6 +149,88 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kunzhidao">
+      <meta itemprop="description" content="一个远程工作机会，记录学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kunzhidao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/" class="post-title-link" itemprop="url">有关mysql锁的一场深刻认知</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-01-02 00:33:15 / 修改时间：01:13:46" itemprop="dateCreated datePublished" datetime="2024-01-02T00:33:15+08:00">2024-01-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在使用MySQL数据库的过程中遇到了一个锁的问题，因为当时技术水平不够，一直未能找到bug原因，后经人指点才理解问题。简化问题模型如下：</p>
+<p>有<code>user</code>表和<code>book</code>表。</p>
+<p>当一个任务进行时，我都先根据<code>user</code>的<code>account_id</code>字段锁定<code>user</code>表的行记录；然后根据<code>account_id</code>修改<code>user</code>表的数据，并也修改<code>book</code>表的数据，这两个修改在同一个事务中进行。</p>
+<p>那么，我想当然认为，如果每个线程的操作都按照上面所述进行操作，每次事务中的SQL都顺序执行，就不会产生数据错误。</p>
+<p>但实际上并不是这么回事儿，在实际程序执行中，修改<code>book</code>表的结果有误，并未读取到之前事务提交后的数据结果。</p>
+<p>具体测试和思路如下方代码：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -550,7 +632,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
