@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近在学习区块链的知识，总结了一些知识点，其实也不是很确定对与错，只是暂时记下来。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我对bitcoin的知识点理解">
+<meta property="og:url" content="http://example.com/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="kunzhidao">
+<meta property="og:description" content="最近在学习区块链的知识，总结了一些知识点，其实也不是很确定对与错，只是暂时记下来。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image20240105001.png">
+<meta property="og:image" content="http://example.com/images/image20240105002.png">
+<meta property="og:image" content="http://example.com/images/image20240105003.png">
+<meta property="og:image" content="http://example.com/images/image20240105004.png">
+<meta property="og:image" content="http://example.com/images/image20240105004.png">
+<meta property="article:published_time" content="2024-01-03T06:29:34.000Z">
+<meta property="article:modified_time" content="2024-01-09T07:48:16.603Z">
+<meta property="article:author" content="kun">
+<meta property="article:tag" content="区块链">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image20240105001.png">
+
+
+<link rel="canonical" href="http://example.com/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/","path":"2024/01/03/我对bitcoin的知识点理解/","title":"我对bitcoin的知识点理解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我对bitcoin的知识点理解 | kunzhidao</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kunzhidao</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">再学一点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%99%E9%A2%9D"><span class="nav-number">1.</span> <span class="nav-text">余额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%B1%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">钱包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">4.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81%EF%BC%88SegWit%EF%BC%89%E5%9C%B0%E5%9D%80"><span class="nav-number">5.</span> <span class="nav-text">隔离见证（SegWit）地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pending%E4%BA%A4%E6%98%93"><span class="nav-number">6.</span> <span class="nav-text">Pending交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Opt-In-Replace-by-Fee"><span class="nav-number">7.</span> <span class="nav-text">Opt-In Replace-by-Fee</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BRC-20"><span class="nav-number">8.</span> <span class="nav-text">BRC-20</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OP-RETURE"><span class="nav-number">8.1.</span> <span class="nav-text">OP_RETURE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81"><span class="nav-number">8.2.</span> <span class="nav-text">隔离见证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Taproot"><span class="nav-number">8.3.</span> <span class="nav-text">Taproot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%AD%E6%96%87"><span class="nav-number">8.4.</span> <span class="nav-text">铭文</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">kun</p>
+  <div class="site-description" itemprop="description">一个远程工作机会，记录学习笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kunzhidao">
+      <meta itemprop="description" content="一个远程工作机会，记录学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="我对bitcoin的知识点理解 | kunzhidao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          我对bitcoin的知识点理解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-01-03 14:29:34" itemprop="dateCreated datePublished" datetime="2024-01-03T14:29:34+08:00">2024-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-09 15:48:16" itemprop="dateModified" datetime="2024-01-09T15:48:16+08:00">2024-01-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近在学习区块链的知识，总结了一些知识点，其实也不是很确定对与错，只是暂时记下来。</p>
+<span id="more"></span>
+
+<p>学习区块链知识，离不开的话题肯定是bitcoin，我也是从bitcoin开始。<br>学习bitcoin我觉得离不开的文档资料是这几个：<br>一、我先读了一下《Mastering Bitcoin》这本书，鉴于英语水平不行，我读的是他的翻译版本。<br>二、我下载和使用了bitcoinJ尝试做了一些btc链上的基本操作。</p>
+<p>有关知识点，我总结了下面这些，<strong>我随时想到随时写，随时发现错误随时更改。也就是说，这些也可能是我片面或者错误的理解。</strong></p>
+<h2 id="余额"><a href="#余额" class="headerlink" title="余额"></a>余额</h2><p>bitcoin没有正经的”余额“概念，而是一个叫”UTXO“（Unspent Transaction Output 未花费的交易输出）的概念。<br>如果我从其他人那里收到一笔btc的转账，那么这些btc在我的btc地址上，就是一个”未花费的交易输出“，当我想向其他人转账时，我就要使用这个”未花费的交易输出“作为交易的”input“，对方一个收款地址作为”output“，对方这个”output“就成为了他的一个新的”未花费的交易输出“。当他要使用这笔btc时，就要用这个”output“作为新交易的”input“。<br>另外，如果我的一个”UTXO“是1btc，但我本次转账金额仅为0.5btc，那么我就必须将剩下的0.5btc”找零（change）“给另一个地址（实际上找零金额不应该是0.5而会更小，你还需要付一些矿工费用，这个找零金额应该是扣除矿工费用之后的金额），因为一个”UTXO“只能被使用一次。但如果我的地址上有多个”UTXO“,那么我是可以一次使用多个，或者多次使用的。但是，每一个”UXTO”都必须完整被使用或者“找零”出去，因为一个”UTXO“只能被使用一次。</p>
+<h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>钱包是bitcoin上的一个用于管理所有地址的工具，它里面可以有多个地址，每个地址都可以进行上面所说的交易行为。在bitcoinJ的实现中，钱包可以帮助你来管理你的地址，在转账交易中，钱包会自动选择你的“UTXO”作为交易的input，并将你未使用完的部分“找零”到你钱包里的一个新地址上。</p>
+<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>这里主要想提一下“全节点”和“spv”（Simplified Payment Verification）节点<br>全节点：全节点在比特币网络中扮演着重要的角色。它们下载并验证区块链上的所有交易和区块，确保所有的规则（如比特币被创建的速度，交易的格式等）都被遵守。全节点提供了最高级别的安全性，因为它们不需要信任任何其他节点。然而，运行一个全节点需要大量的存储空间和带宽。<br>SPV节点：SPV节点（Simplified Payment Verification Node）是一种轻量级的比特币节点，它只下载区块链的部分数据，而不是全部数据。这可以减少存储和带宽的需求。然而，SPV节点必须依赖全节点来获取交易和区块的完整信息。因此，SPV节点的安全性较全节点稍低。<br>在使用bitcoinJ库的时候，它会自动建立一个spv节点完成你需要进行的操作。</p>
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><p>再bitcoinJ的源码里，Network有四个选择，分别是MainNetParams，TestNet3Params，RegTestParams和UnitTestParams。前三个非常好理解，分别是“主网”，“测试网”和“单机测试网”。<br>1.MainNet 主网，就是大家熟知的bitcoin核心网络。<br>2.TestNet3 测试网  是一个公共的用于测试的bitcoin网络，它的运行规则基本与主网一致，但是挖矿难度低，其中的btc基本没有价值。<br>3.RegTest  “单机测试网”是一种自己启动的测试节点，可以通过命令进行区块发布等行为，不用进行“挖矿”等行为，但是没有一个公共的网络，需要你自己布置一个节点或者使用其他人的RegTest节点。<br>再使用bitcoinJ的时候，1、2、两个节点的操作都可以通过内置的spv节点进行操作，但3需要指定对应的RegTest节点才行。</p>
+<p>至于UnitTestParams，我再文档中看到他是用于“单元测试”用的网络，而不是真实网络，但我并不理解它怎么用，暂时搁置为问题了。</p>
+<h2 id="隔离见证（SegWit）地址"><a href="#隔离见证（SegWit）地址" class="headerlink" title="隔离见证（SegWit）地址"></a>隔离见证（SegWit）地址</h2><p>我使用bitcoinJ创建了钱包，产生了地址，再测试网随便得到了一个地址，假如它长这个样子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mipcBbFg9gMiCh81Kj8tqqdgoZub1ZJRfn</span><br></pre></td></tr></table></figure>
+<p>但是当我拿这个地址去测试网水龙头中想获取一些测试btc时，这个水龙头网站告诉我，这是一个不正确的bitcoin地址，这是怎么回事呢？<br>经查询，bitcoin在BIP141引入了隔离见证（SegWit）地址，现在大家都使用这种新地址了，它一般长这个样子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx</span><br></pre></td></tr></table></figure>
+<p>关于隔离见证（SegWit）地址的资料如下：<br>隔离见证（SegWit）地址是一种特殊的比特币地址格式，它是由比特币改进提案BIP141引入的。SegWit地址的主要目标是解决比特币网络的可扩展性问题，提高交易的效率和安全性。<br>在技术上，SegWit地址的主要特点是将交易的签名数据（见证数据）从交易的主体中分离出来，从而减小了交易的大小，使得每个区块可以容纳更多的交易。这也是“隔离见证”这个名字的由来。<br>SegWit地址通常以bc1开头，与传统的比特币地址（以1或3开头）看起来不同。这是因为SegWit地址使用了一种名为bech32的新的编码格式，这种格式具有更好的错误检测能力，并且在大小写不敏感的系统中更容易使用。</p>
+<p>其实根据查询，bitcoin地址有很多类型，我查到的如下：<br>P2PKH：这是最早的比特币地址类型，它代表的是一个公钥哈希。当你想要花费发送到P2PKH地址的比特币时，你需要提供一个公钥和一个签名。<br>P2SH：这种地址类型代表的是一个脚本的哈希。当你想要花费发送到P2SH地址的比特币时，你需要提供一个满足脚本条件的输入。这种地址类型的主要优点是可以支持更复杂的交易类型，如多签名交易。<br>P2WPKH：这是隔离见证（SegWit）引入的新的地址类型，它和P2PKH类似，但是将签名数据（见证数据）从交易的主体中分离出来，从而减小了交易的大小。<br>P2WSH：这也是隔离见证引入的新的地址类型，它和P2SH类似，但是将签名数据（见证数据）从交易的主体中分离出来。这种地址类型可以支持更复杂的隔离见证交易。<br>P2TR： Pay to Taproot<br>Taproot 是比特币的一个激进升级，旨在提高隐私、降低交易费用，并增加智能合约的灵活性。<br>P2TR是一种比特币脚本类型，通过使用Taproot升级引入。与传统的P2PKH（Pay to Public Key Hash）或P2PK（Pay to Public Key）等脚本类型不同，P2TR允许将多个条件聚合到一个单一的 Taproot 密钥中，并在链上只显示一个简化的支付地址。这有助于提高隐私，因为无法直接从地址中看出多方参与的具体条件。<br><strong>这似乎与最近十分流行的铭文息息相关，但我还没研究到他</strong></p>
+<p>其中P2PKH和P2SH就是较早版本的地址，后面引入隔离见证（SegWit）之后，就升级成了P2WPKH和P2WSH类型的地址。<br>上面我遇到的问题就是P2PKH和P2WPKH地址的区别。<br>那么P2SH和P2WSH的地址时干什么用的呢？<br>查询得知：<br>P2WSH地址的主要特点是，它代表的不是一个具体的公钥，而是一个脚本。这个脚本定义了赎回比特币的条件。当一个交易输出指向一个P2WSH地址时，赎回这些比特币需要提供满足脚本条件的输入。<br>P2WSH被常用于多签名交易，时间锁定交易等。<br>根据上面的资料，我想到了eth的只能合约，但是经过查询，它还不是只能合约，差距还很大。比如它是非图灵完备的语言，功能十分有限。<br><strong>更深的细节我还没有研究。</strong></p>
+<h2 id="Pending交易"><a href="#Pending交易" class="headerlink" title="Pending交易"></a>Pending交易</h2><p>当一个比特币交易被创建并广播到网络，但还未被矿工打包进一个区块，这个交易就处于”Pending”或”未确认”状态。<br>这些交易被存储在比特币节点的内存池（Mempool）中，等待矿工将其打包进新的区块。一旦交易被打包进一个区块并添加到区块链，它就被视为已确认。<br>交易确认的速度取决于多个因素，包括交易费用（更高的费用可能会让矿工更快地确认交易）和网络的拥堵程度（如果有很多未确认的交易，确认可能会需要更长的时间）。</p>
+<h2 id="Opt-In-Replace-by-Fee"><a href="#Opt-In-Replace-by-Fee" class="headerlink" title="Opt-In Replace-by-Fee"></a>Opt-In Replace-by-Fee</h2><p>在上面我提到了<strong>Pending交易</strong>，那如果网络很繁忙，我的一笔“Pending交易”就可能推迟很久无法完成交易，随着时间的变迁，这可能已经不符合我的要求了，所以我需要把它”取消“掉。但是，在bitcoin网络中，我们无法真正的做”取消“这个操作，但可以通过一些特别操作完成它。<br><strong>Opt-In Replace-by-Fee</strong>就是这么一种操作，在做一笔转账交易时，我们在原始交易中设置RBF标志（即input中设置nSequence为一个小于0xffffffff的值），那么这个交易就可以在未被矿工打包之前，使用相同的一个input但更高交易费的新交易。这种机制是被比特币网络接受的，可以用来加速交易确认，或者在一定程度上”取消”未确认的交易。例如，你可以将新交易转账给自己的一个地址，并使用更高的矿工费用来使这笔交易先完成，原有的那笔交易就无法成功了。</p>
+<h2 id="BRC-20"><a href="#BRC-20" class="headerlink" title="BRC-20"></a>BRC-20</h2><p>最近十分火爆的铭文到底是什么？<br>个人理解，铭文就是一种使用ordinals协议产生的nft。</p>
+<p>###ordinals协议###<br>Ordinals 指一个以独特方式对“聪”排序、创造出NFT 所需的非同质化属性的系统。 简单地说，Ordinals 为每一聪分配一个特定的数字，使之与其他聪区分开来。 这种编号系统确保每聪都有一个独特的标识符。 铭文代表附在聪上的实际内容。</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.panewslab.com/zh/articledetails/1301r1ibp79c.html">下面是我在网上找到的有关理解ordinals协议的资料</a>：</p>
+<h3 id="OP-RETURE"><a href="#OP-RETURE" class="headerlink" title="OP_RETURE"></a>OP_RETURE</h3><p>在 Bitcoin Core 客户端 0.9 版中，通过采用 RETURN 操作符最终实现了妥协。<strong>RETURN 允许开发者在交易输出上增加 80 字节的非支付数据。</strong>与伪支付不同，RETURN 创造了一种明确的可验证不可消费型输出，此类数据无需存储于 UTXO 集。RETURN 输出被记录在区块链上，它们会消耗磁盘空间，也会导致区块链规模的增加，但它们不存储在 UTXO 集中，因此也不会使得 UTXO 内存池膨胀，更不会增加全节点昂贵的内存代价。<br>虽然OP_RETURN是一个非常直接的用以存储信息至比特币区块链的手段，它也是一个潜在的铭文方式。但是OP_RETURN的限制使得其在处理元数据存储时面临一些挑战。首先，OP_RETURN只能存储80字节的数据，对于需要存储更大量数据的情况来说，这种限制显然是无法满足的。其次，OP_RETURN数据被存储在交易输出部分，虽然这种数据不存储在UTXO集中，但是它们占用了区块链的存储空间，导致区块链规模的增加。最后，使用OP_RETURN会导致交易费用的提高，因为它需要支付更多的费用来发布这些交易。</p>
+<h3 id="隔离见证"><a href="#隔离见证" class="headerlink" title="隔离见证"></a>隔离见证</h3><p>相比之下，SegWit提供的新方法则可以克服上述问题。SegWit是比特币的一个重要协议升级，由比特币核心开发者 Pieter Wuille 在 2015 年提出，最终在 2017 年的 0.16.0 版本中被正式采纳。Segregated Witness中的Segregated是分离、隔离的意思，Witness是与交易相关的签名事物。因此，SegWit是将某些交易签名数据(见证数据)与交易分开。<br>将签名与交易相关数据分离的主要好处是减少了存储在一个比特币块中的数据的大小。这样每个块具有额外的容量来存储更多的交易，也意味着网络可以处理更多的交易，并且发送者支付更低的手续费。从技术上来说就是把脚本签名(scriptSig)信息从基本结构 (base block) 里拿出来，放在一个新的数据结构当中。做验证工作的节点和矿工也会验证这个新的数据结构里的脚本签名，以确保交易有效。Segwit 升级在交易输出中引入了一个新的见证字段，以确保隐私和性能。虽然见证数据不是为了数据存储而设计的，但它实际上给了我们一个存储铭文元数据等内容的机会。我们通过下图来更加形象地理解隔离见证：<br><img src="/images/image20240105001.png" alt="图1" title="图1"></p>
+<h3 id="Taproot"><a href="#Taproot" class="headerlink" title="Taproot"></a>Taproot</h3><p>P2TR是比特币的一种交易输出类型，它是在2021年进行的Taproot升级中引入的，它使得不同的交易条件可以更加隐私地存储在区块链中。在Ordinals的铭文中，P2TR 扮演着至关重要的角色。铭文本质上是将特定的数据内容嵌入到比特币交易中，而Taproot升级，尤其是P2TR，使得这种嵌入数据变得更加灵活和经济。<br>首先，由于Taproot脚本的存储方式，我们可以在Taproot脚本路径支出脚本中存储铭文内容，这些脚本在内容方面几乎没有任何限制，同时还能获得见证数据的折扣，使得存储铭文内容相对经济。由于Taproot脚本的消费只能从已经存在的Taproot输出中进行，因此，铭文采用了两阶段的提交&#x2F;揭示流程。首先，在提交交易中，创建了一个承诺包含铭文内容的脚本的Taproot输出。然后，在揭示交易中，消费了由提交交易创建的输出，从而在链上揭示了铭文内容。<br>这种做法大大降低了对资源的消耗。如果不使用P2TR，见证信息会存储在交易的输出中。这样，只要这笔输出未被消费，见证信息就会一直存储在UTXO集中。相反，如果使用了P2TR，见证信息不会出现在提交阶段生成的交易中，因此它不会被写入UTXO集。只有当这笔UTXO被消费时，见证信息才会在揭示阶段的交易输入中出现。P2TR让元数据能够写入比特币区块链，但却从未出现在UTXO集中。由于维护&#x2F;修改UTXO集需要更多的资源，因此这种做法可以节省大量资源。</p>
+<h3 id="铭文"><a href="#铭文" class="headerlink" title="铭文"></a>铭文</h3><p>Ordinals 协议利用了SegWit 放宽了对写入比特币网络内容的大小限制，将铭文内容存储在见证数据中。使其可以存储最大4MB的元数据。Taproot 使得在比特币交易中存储任意见证数据变得更加容易，允许 Ordinals 开发人员 Casey Rodarmor 将旧操作码（OP_FALSE、OP_IF、OP_PUSH）重新用于他所描述的「信封」为被称为「铭文」存储任意数据。<br>首先，需要在提交交易中创建一个承诺到包含铭文内容的脚本的Taproot输出。存储的格式是Taproot，即前一笔交易的输出是P2TR (Pay-To-Taproot)，后一笔交易的输入，在见证的Taproot script中嵌入特定格式的内容；<br>首先将字符串ord入栈，以消除铭文有其他用途的歧义。<br>OP_PUSH 1指示下一次推送包含内容类型，并OP_PUSH 0指示后续数据推送包含内容本身。大型铭文必须使用多次数据推送，因为 taproot 的少数限制之一是单个数据推送不得大于 520 字节。此时铭文的数据已对应到交易输出的UTXO上，但是未被公开。<br>其次，需要在揭示交易中消费提交交易创建的那个输出。在这个阶段，通过将那笔铭文对应的UTXO作为输入，发起交易。此时，其对应的铭文内容被公开至全网。<br>通过上述两个步骤，铭文内容已与被铭刻的UTXO进行绑定。再根据上文介绍的对于聪的定位，铭刻是在其输入的UTXO对应的第一个聪上进行，铭文内容包含在显示交易的输入中。根据上文介绍的对于聪的流转、跟踪的介绍，这个被铭刻上特殊内容的聪可以被转移、购买、出售、丢失和恢复。需要注意的是，不可以重复铭刻，否则后面的铭文是无效的。<br>我们将通过铭刻一个BTC NFT小图片的例子来详细说明这个过程，这个过程主要包括之前提到的提交（commit）和揭露（reveal）两个阶段。首先，我们看到第一笔交易的Hash ID是2ddf9…f585c。可以注意到，这笔交易的输出不包含见证数据，网页中也没有相关的铭文信息。<br><img src="/images/image20240105002.png" alt="图2" title="图2"></p>
+<p>接着，我们查看第二阶段的记录，其Hash ID是e7454…7c0e1。在这里，我们可以看到Ordinals inscription 的信息，也就是见证的铭文内容。这笔交易的输入地址是前一个交易的输出地址，而输出的0.00000546BTC（546聪）则是将这个NFT发送到自己的地址。同时，我们也可以在Sat 1893640468329373中找到这个铭文所在的聪。<br><img src="/images/image20240105003.png" alt="图3" title="图3"><br><img src="/images/image20240105004.png" alt="图4" title="图4"></p>
+<p>在比特币钱包中，我们可以看到这个资产。如果我们想要交易这个NFT，可以直接将其发送给其他人的地址，也就是将这笔UTXO发送出去，这样就完成了铭文的流转。<br><img src="/images/image20240105004.png" alt="图5" title="图5"></p>
+<hr>
+<p>到这里我觉得自己的困惑和理解。<br>1.靠什么保证每一个聪只被铭刻一次？<br>个人理解：虽然铸造完毕也能按照铸造格式铸造，但是就被视为无效。</p>
+<p>2.如果有人重复铭刻同名铭文，靠什么失效？<br>个人理解：也是就被视为无效。</p>
+<p>3.怎么将每一个聪都铭刻上铭文，毕竟很多btc已经“死亡”在一些已丢失的钱包里了？<br>个人理解：毕竟有上限，所以只会铭刻部分“聪”，如果你发行某个铭文，想铭刻2100 0000 万亿（聪的总数）个，肯定无法达成。</p>
+<p>4.每次铭刻要交易的最低金额是“xxx个聪”，那这xxx个聪似乎无法再分割了？那怎么铭刻到每一个铭文上？<br>网上看到：铭文一旦铸造，它就会与它所刻录的聪绑定起来。但是因为防止粉尘攻击，比特币有最小交易限制，单笔的交易最小限制为 294 聪。所以铭文不是与一个聪绑定，而是至少 294 个聪。但是铭文的追踪不是追踪这 294 个聪的编号，而是追踪第一个聪的编号。这样，铭文的储存、转移和交易，只需要追踪特定的编号的聪就可以。</p>
+<p>5.如果真被分割了会怎么样？铭文还存在吗？<br>根据“4.”  那么不存在此问题</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"># 区块链</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/01/02/%E6%9C%89%E5%85%B3mysql%E9%94%81%E7%9A%84%E4%B8%80%E5%9C%BA%E6%B7%B1%E5%88%BB%E8%AE%A4%E7%9F%A5/" rel="prev" title="有关mysql锁的一场深刻认知">
+                  <i class="fa fa-angle-left"></i> 有关mysql锁的一场深刻认知
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/01/09/Nubit%E5%88%9D%E8%AF%86%E5%92%8C%E4%BA%86%E8%A7%A3/" rel="next" title="Nubit初识和了解">
+                  Nubit初识和了解 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kun</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

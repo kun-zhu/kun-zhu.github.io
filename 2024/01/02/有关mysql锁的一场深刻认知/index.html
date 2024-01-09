@@ -27,7 +27,7 @@
 <meta property="og:description" content="在使用MySQL数据库的过程中遇到了一个锁的问题，因为当时技术水平不够，一直未能找到bug原因，后经人指点才理解问题。简化问题模型如下： 有user表和book表。 当一个任务进行时，我都先根据user的account_id字段锁定user表的行记录；然后根据account_id修改user表的数据，并也修改book表的数据，这两个修改在同一个事务中进行。 那么，我想当然认为，如果每个线程的操作都">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-01T16:33:15.000Z">
-<meta property="article:modified_time" content="2024-01-01T17:13:46.068Z">
+<meta property="article:modified_time" content="2024-01-02T09:34:39.527Z">
 <meta property="article:author" content="kun">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-01-02 00:33:15 / 修改时间：01:13:46" itemprop="dateCreated datePublished" datetime="2024-01-02T00:33:15+08:00">2024-01-02</time>
+      <time title="创建时间：2024-01-02 00:33:15 / 修改时间：17:34:39" itemprop="dateCreated datePublished" datetime="2024-01-02T00:33:15+08:00">2024-01-02</time>
     </span>
 
   
@@ -220,7 +220,7 @@
 <p>实际上结论一正确，结论二是在临界条件下是错误的。</p>
 <p>1、 行锁<br>InnoDB支持行锁，在多个线程对同一行加排他锁的时候，只有一个线程能够进入，就是上面的语句一的本意。<br>行锁在事务提交(commit语句)的时候释放</p>
 <p>2、可见性<br>本业务把事务隔离级别设置为read-commited， 也就是说，一个事务提交后，它的更新才能被其他事务看见。</p>
-<p><strong>但是</strong>， “提交”并不是一个原子动作，它包含一系列操作。<br>在我们这个例子中，需要关注的两个操作是<br>a) 解除行锁<br>b) 设置行的可见状态（也就是说，标记着是个提交的行，可以被读）</p>
+<p><strong>但是</strong>， “提交”并不是一个原子动作，它包含一系列操作。<br>在我们这个例子中，需要关注的两个操作是<br>a) 解除行锁<br>b) 设置行的可见状态（也就是说，标记这是个提交的行，可以被读）</p>
 <p>在InnoDB的实现中，就是先 a) 后 b)</p>
 <p>3、一致性读和当前读<br>对于一个普通的查询，没有带for update 或lock in share mode， 它是否可以读取某一行的最新值，取决于语句开始时，这一行上的最新事务是否提交，<br>在我们的细分讨论里，就是是否过了 b) 阶段。也就是说，可能读到的是旧值。</p>
 <p>而对于一个有for update 的语句，使用当前读，读到的是最新值。</p>
@@ -258,6 +258,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/" rel="next" title="我对bitcoin的知识点理解">
+                  我对bitcoin的知识点理解 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>

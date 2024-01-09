@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="关注了一个区块链的新项目，自我介绍是：”以比特币为基础的数据可用性层“，目前也只是白皮书阶段，浅浅的看了一下它。用AI翻译了一下它的公告和白皮书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nubit初识和了解">
+<meta property="og:url" content="http://example.com/2024/01/09/Nubit%E5%88%9D%E8%AF%86%E5%92%8C%E4%BA%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="kunzhidao">
+<meta property="og:description" content="关注了一个区块链的新项目，自我介绍是：”以比特币为基础的数据可用性层“，目前也只是白皮书阶段，浅浅的看了一下它。用AI翻译了一下它的公告和白皮书">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image20240109001.png">
+<meta property="og:image" content="http://example.com/images/image20240109001.png">
+<meta property="og:image" content="http://example.com/images/image20240109002.png">
+<meta property="og:image" content="http://example.com/images/image20240109003.png">
+<meta property="og:image" content="http://example.com/images/image20240109004.png">
+<meta property="og:image" content="http://example.com/images/image20240109005.png">
+<meta property="article:published_time" content="2024-01-09T06:54:18.000Z">
+<meta property="article:modified_time" content="2024-01-09T08:12:29.328Z">
+<meta property="article:author" content="kun">
+<meta property="article:tag" content="区块链">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image20240109001.png">
+
+
+<link rel="canonical" href="http://example.com/2024/01/09/Nubit%E5%88%9D%E8%AF%86%E5%92%8C%E4%BA%86%E8%A7%A3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/01/09/Nubit%E5%88%9D%E8%AF%86%E5%92%8C%E4%BA%86%E8%A7%A3/","path":"2024/01/09/Nubit初识和了解/","title":"Nubit初识和了解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Nubit初识和了解 | kunzhidao</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kunzhidao</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">再学一点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E7%89%B9%E5%92%8C%E7%BF%BB%E8%AF%91"><span class="nav-number">1.</span> <span class="nav-text">推特和翻译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%91%8A%E5%92%8C%E7%BF%BB%E8%AF%91"><span class="nav-number">2.</span> <span class="nav-text">公告和翻译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BD%E7%9A%AE%E4%B9%A6%E5%92%8C%E7%BF%BB%E8%AF%91"><span class="nav-number">3.</span> <span class="nav-text">白皮书和翻译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Bitcoin-Ecosystem"><span class="nav-number">3.1.</span> <span class="nav-text">The Bitcoin Ecosystem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E7%89%B9%E5%B8%81%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.2.</span> <span class="nav-text">比特币生态系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">3.3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA"><span class="nav-number">3.4.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Goals"><span class="nav-number">3.5.</span> <span class="nav-text">Goals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">3.6.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enable-Various-Data-Types"><span class="nav-number">3.7.</span> <span class="nav-text">Enable Various Data Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.8.</span> <span class="nav-text">实现多种数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Programmability"><span class="nav-number">3.9.</span> <span class="nav-text">Programmability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E6%80%A7"><span class="nav-number">3.10.</span> <span class="nav-text">可编程性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">3.11.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">3.12.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture"><span class="nav-number">3.13.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">3.14.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validator"><span class="nav-number">3.15.</span> <span class="nav-text">Validator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8"><span class="nav-number">3.16.</span> <span class="nav-text">验证器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-Proposing-and-DA-Attestation"><span class="nav-number">3.17.</span> <span class="nav-text">Block Proposing and DA Attestation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E6%8F%90%E8%AE%AE%E5%92%8CDA%E8%AF%81%E6%98%8E"><span class="nav-number">3.18.</span> <span class="nav-text">区块提议和DA证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bridge"><span class="nav-number">3.19.</span> <span class="nav-text">Bridge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%A5%E6%8E%A5"><span class="nav-number">3.20.</span> <span class="nav-text">桥接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Node"><span class="nav-number">3.21.</span> <span class="nav-text">Full Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E8%8A%82%E7%82%B9"><span class="nav-number">3.22.</span> <span class="nav-text">全节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Light-Node"><span class="nav-number">3.23.</span> <span class="nav-text">Light Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BB%E8%8A%82%E7%82%B9"><span class="nav-number">3.24.</span> <span class="nav-text">轻节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Availability-Sampling"><span class="nav-number">3.25.</span> <span class="nav-text">Data Availability Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%AF%E7%94%A8%E6%80%A7%E9%87%87%E6%A0%B7"><span class="nav-number">3.26.</span> <span class="nav-text">数据可用性采样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Assumptions"><span class="nav-number">3.27.</span> <span class="nav-text">Security Assumptions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%81%87%E8%AE%BE"><span class="nav-number">3.28.</span> <span class="nav-text">安全假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Roadmap"><span class="nav-number">3.29.</span> <span class="nav-text">Roadmap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%BA%BF%E5%9B%BE"><span class="nav-number">3.30.</span> <span class="nav-text">路线图</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">kun</p>
+  <div class="site-description" itemprop="description">一个远程工作机会，记录学习笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/09/Nubit%E5%88%9D%E8%AF%86%E5%92%8C%E4%BA%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kunzhidao">
+      <meta itemprop="description" content="一个远程工作机会，记录学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Nubit初识和了解 | kunzhidao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nubit初识和了解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-01-09 14:54:18 / 修改时间：16:12:29" itemprop="dateCreated datePublished" datetime="2024-01-09T14:54:18+08:00">2024-01-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>关注了一个区块链的新项目，自我介绍是：”以比特币为基础的数据可用性层“，目前也只是白皮书阶段，浅浅的看了一下它。用AI翻译了一下它的公告和白皮书</p>
+<span id="more"></span>
+
+<h2 id="推特和翻译"><a href="#推特和翻译" class="headerlink" title="推特和翻译"></a>推特和翻译</h2><ol>
+<li><p>介绍 Nubit：第一个以比特币为基础的数据可用性层<br>Riema Labs 完成了天使投资，并激动地推出了 Nubit，由 @bounce_finance、@domodata 等创始人支持。<br>Introduction to Nubit: The First Bitcoin-native Data Availability Layer<br>Riema Labs has successfully secured angel investment and is thrilled to introduce Nubit, supported by the founders of @bounce_finance, @domodata, and many others.</p>
+</li>
+<li><p>为何 Nubit 是比特币生态系统的颠覆者<br>随着比特币上有超过 5000 万个记录和 14GB 的数据，对于数据可用性层的需求空前高涨。Nubit 独特设计，提供了一个经济高效、安全可靠的比特币数据解决方案。<br>Why Nubit is a Game Changer in the Bitcoin Ecosystem<br>With over 50 million inscriptions and 14GB of data on Bitcoin, the demand for a data availability layer has never been higher. Nubit is uniquely designed to offer a cost-effective, secure solution for Bitcoin’s data.</p>
+</li>
+<li><p>Nubit 在比特币生态系统中的优势<br>Nubit 扩展了数据处理能力，同时坚守比特币的信任原则。它利用比特币的经济安全性实现增强的可扩展性，为比特币生态系统提供了以降低成本为特色的大规模数据存储。<br>Nubit’s Edge in the Bitcoin Ecosystem<br>Nubit expands data handling capabilities while upholding Bitcoin’s trust principles. It leverages Bitcoin’s economic security for enhanced scalability, enabling large-scale data storage at reduced costs for the Bitcoin Ecosystem.</p>
+</li>
+<li><p>PoS 共识与比特币质押相遇<br>Nubit 采用 PoS 共识，并搭配像 @babylon_chain 这样的比特币质押解决方案，以一种最大程度减少信任的方式增强安全性。这一切都是为了保持比特币的精神，同时改进其运作方式。<br>PoS Consensus Meets Bitcoin Staking<br>Nubit adopts PoS consensus, paired with Bitcoin staking solutions like @babylon_chain, to enhance security in a trust-minimized way. It’s all about keeping Bitcoin’s spirit while improving how it works.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PoS（Proof of Stake）共识是一种区块链技术中用于验证和确认交易的机制。与传统的共识算法如PoW（Proof of Work）不同，PoS不需要参与者解决复杂的数学问题来创建新的区块，而是根据其拥有的加密货币数量来选择下一个区块的创建者。</span><br><span class="line">在PoS中，持有加密货币的用户（也称为“股东”或“权益者”）可以通过将一定数量的货币冻结或锁定在网络上，作为其在区块链中的“股份”，来有机会被选为下一个区块的创建者。选择创建区块的权利与持有的货币数量成正比，这就是为什么这种共识机制被称为“权益证明”。</span><br><span class="line">PoS的优势之一是相对较低的能源消耗，因为不需要进行大量的计算来解决复杂的数学问题。此外，PoS也被认为可以降低51%攻击的风险，因为攻击者需要拥有大量的加密货币来掌握网络的控制权。</span><br><span class="line">需要注意的是，PoS有多个变种和改进版本，每个区块链项目可能会采用不同的PoS共识机制。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DA（数据可用性）证明与比特币信任的抽样<br>Nubit 对 DA 证明与抽样进行了优化，利用比特币作为基础信任层。通过逐步将所有 Nubit 数据块的证明上传到比特币网络，我们确保了数据的安全性，避免了对第三方的依赖。<br>DA Attestation &amp; Sampling with Bitcoin Trust<br>Nubit refines DA Attestation and Sampling, using Bitcoin as a foundational trust layer. We ensure data security without third-party dependence by incrementally uploading proofs of all Nubit data blocks to Bitcoin. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这里我有一个疑问：</span><br><span class="line">bitcoin没有智能合约，怎么验证L2上传的数据？</span><br><span class="line">个人不太确定的理解：本地验证后把tag发布到btc上即可。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比特币本地化的去中心化桥接<br>通过在每个纪元由共识选举的签名者组控制，Nubit 的比特币桥架设在代码经过正式验证的基础上，带来了全新的透明度和信任水平。<br>Bitcoin-native Decentralized Bridge<br>With its code formally verified and operations controlled by a consensus-elected signer group each epoch, Nubit’s Bitcoin bridge brings a new level of transparency and trust.</p>
+</li>
+<li><p>加入 Nubit 的旅程<br>Nubit 正在为比特币生态系统开创数据可用性的先河。在 Twitter 上关注我们，获取见解、新闻和社区讨论。成为这一激动人心旅程的一部分！<br>Join the Nubit Journey<br>Nubit is pioneering data availability for the Bitcoin ecosystem. Follow us on Twitter for insights, news, and community discussions. Be part of this exciting journey!</p>
+</li>
+<li><p>在 Medium 上阅读完整公告：<br>Read the full announcement on Medium:<br><a target="_blank" rel="noopener" href="https://medium.com/@nubit_org/riema-secures-angel-investment-for-launching-the-first-bitcoin-native-data-availability-layer-49ccf0487380">https://medium.com/@nubit_org/riema-secures-angel-investment-for-launching-the-first-bitcoin-native-data-availability-layer-49ccf0487380</a></p>
+</li>
+<li><p>这是本次推文线程的最后一条。请注意防范冒充者。关注 @nubit_org 获取关于 Nubit 的最新官方更新。<br>This is the final tweet in this thread. Be cautious of impersonators. For the latest and official updates on Nubit, follow us at @nubit_org.</p>
+</li>
+</ol>
+<h2 id="公告和翻译"><a href="#公告和翻译" class="headerlink" title="公告和翻译"></a>公告和翻译</h2><p>Riema Labs Secures Angel Investment for Launching the First Bitcoin-native Data Availability Layer<br>瑞玛实验室获得天使投资，用于推出首个基于比特币的数据可用性层。</p>
+<p>Riema Labs concluded crucial funding to launch a pioneering data availability layer, set to drastically reduce Bitcoin transaction costs.<br>瑞玛实验室完成了关键的融资，将推出一项开创性的数据可用性层，旨在大幅降低比特币交易成本。</p>
+<p>In a significant boost to the Bitcoin ecosystem, Riema Labs, an emerging leader in the Bitcoin ecosystem, has announced the successful closure of its angel investment round. This funding marks a pivotal moment for the startup, enabling the launch of its innovative product designed to dramatically reduce the cost of Bitcoin transactions.<br>The startup’s innovative product, Nubit, introduces the first-ever Bitcoin-native data availability layer. This technological advancement is poised to transform how transactions are processed on the Bitcoin network, offering a more cost-effective and efficient alternative to current methods.<br>The Riema team is working on BRC-1310, a specialized and bitcoin-native data availability standard, as well as its implementation with several advanced techniques. These include staking native to Bitcoin, data availability sampling techniques, attestation of data directly on the Bitcoin network, and a decentralized bridge. This approach results in numerous notable progressions:<br>在对比特币生态系统的重大推动中，新兴的比特币领导者瑞玛实验室宣布其天使投资轮成功结束。这一融资对于初创公司来说是一个关键时刻，将使其创新产品成功推出，从而显著降低比特币交易的成本。<br>初创公司的创新产品Nubit引入了首个比特币原生的数据可用性层。这一技术进步有望改变比特币网络上交易处理的方式，提供比当前方法更具成本效益和高效的替代方案。<br>瑞玛团队正在研发BRC-1310，这是一种专门的、原生于比特币的数据可用性标准，以及其与多种先进技术的实施。这些技术包括基于比特币的质押、数据可用性采样技术、在比特币网络上直接对数据进行证明以及去中心化桥接。这种方法带来了许多显著的进展：</p>
+<ol>
+<li>Minimized Trusts: Nubit minimizes trust requirements compared to other non-Bitcoin-native Data Availability (DA) solutions and Bitcoin Layer 2.</li>
+<li>Increased Data Throughput: It achieves an estimated 100-fold increase in data throughput compared to the Bitcoin blockchain itself.</li>
+<li>Cost Reduction: Nubit is designed to reduce storage costs on the Bitcoin network by up to 99%.</li>
+<li>Improved Data Accessibility: It offers more fine-grained data access, enabling support for a wider variety of data types and applications.</li>
+</ol>
+<p>翻译：</p>
+<ol>
+<li>最小化信任：与其他非比特币原生的数据可用性（DA）解决方案和比特币L2相比，Nubit最小化了对信任的要求。</li>
+<li>提高数据吞吐量：与比特币区块链本身相比，它实现了预计的数据吞吐量增加了100倍。</li>
+<li>降低成本：Nubit旨在将比特币网络上的存储成本降低高达99%。</li>
+<li>改善数据可访问性：它提供更精细的数据访问，支持更广泛的数据类型和应用<br><img src="/images/image20240109001.png" alt="图1" title="图1"></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ordinals协议   这不就是铭文用的那个协议：</span><br><span class="line">Ordinals 指一个以独特方式对“聪”排序、创造出NFT 所需的非同质化属性的系统。 简单地说，Ordinals 为每一聪分配一个特定的数字，使之与其他聪区分开来。 这种编号系统确保每聪都有一个独特的标识符。 铭文代表附在聪上的实际内容。</span><br><span class="line"></span><br><span class="line">normal data  常规数据</span><br><span class="line">Defi</span><br><span class="line">price Oracle  价格预言机</span><br><span class="line"></span><br><span class="line">bitcoin layer2</span><br><span class="line">rollup data  </span><br><span class="line">rollup 是通过将大量的交易数据汇总（roll up）到链上，减轻链上负担，从而提高了区块链的效率；</span><br><span class="line">所以L2 Rollup Data 是指在 Layer 2 上通过 Rollup 技术处理的、已经被整合的数据？</span><br></pre></td></tr></table></figure>
+
+
+<p>Founded by pioneers in the academic field, Riema Labs is driven by a mission to enhance the scalability and accessibility of Bitcoin. “Our solution addresses one of the most critical pain points in the Bitcoin network — the high cost of transactions. By leveraging our proprietary data availability layer, we’re not only optimizing costs but also paving the way for wider Bitcoin adoption,” explains Hans Liu, CEO at Riema Labs.<br>The angel funding round attracted attention from several high-profile co-founders and angel investors from Bounce Finance, BRC-20, and many others, indicating strong confidence in the startup’s vision and technology.<br>The Nubit product launch comes at a crucial time when the demand for more efficient and cost-effective blockchain solutions is at an all-time high. The startup’s unique approach to reducing transaction fees is expected to attract significant interest from individual Bitcoin users, Bitcoin L2s, and institutional players in the cryptocurrency space.<br>“We’re thrilled to have the support of our investors as we roll out this game-changing technology. Our focus now is to ensure seamless integration and adoption of our product within the Bitcoin ecosystem,” said Hongbo Wen, CTO at Riema Labs.<br>The data availability layer developed by Riema Labs is designed to work seamlessly with the Bitcoin network, ensuring that data is accessible, verifiable, and secure at a tiny fraction of its current cost. This innovation represents a critical step in addressing the growing demand for a more robust and versatile Bitcoin infrastructure. As part of their product launch strategy, Riema Labs plans to collaborate with key industry players and participate in various blockchain initiatives. This collaborative approach is expected to foster wider adoption and integration of their technology in the Bitcoin ecosystem.<br>For additional details on Riema and its revolutionary data availability layer for Bitcoin, please visit nubit.org.</p>
+<p>由学术领域的先驱创立，瑞玛实验室的使命是提升比特币的可扩展性和可访问性。瑞玛实验室的首席执行官汉斯·刘解释说：“我们的解决方案解决了比特币网络中最关键的痛点之一 —— 高昂的交易成本。通过利用我们的专有数据可用性层，我们不仅在优化成本方面取得了成功，还为更广泛的比特币采用铺平了道路。”<br>这轮天使融资引起了来自Bounce Finance、BRC-20等多个知名创始人和天使投资者的关注，表明他们对初创公司的愿景和技术有着强烈的信心。<br>Nubit产品的推出正值需求更高效、成本更低的区块链解决方案的历史性时刻。初创公司降低交易费用的独特方法预计将引起个体比特币用户、比特币第二层以及加密货币领域的机构玩家的浓厚兴趣。<br>瑞玛实验室首席技术官温宏波表示：“我们很高兴能够得到投资者的支持，推出这项改变游戏规则的技术。我们目前的重点是确保我们的产品在比特币生态系统内实现无缝集成和采用。”<br>瑞玛实验室开发的数据可用性层被设计成与比特币网络无缝合作，确保数据以比当前成本的微小部分是可访问、可验证且安全的。这一创新代表了满足对更强大、更灵活的比特币基础设施不断增长的需求的关键一步。作为产品推出策略的一部分，瑞玛实验室计划与关键行业参与者合作，并参与各种区块链倡议。这种合作方式预计将促进他们的技术在比特币生态系统中的更广泛采用和整合。<br>有关瑞玛及其面向比特币的革命性数据可用性层的更多详细信息，请访问 nubit.org。</p>
+<h2 id="白皮书和翻译"><a href="#白皮书和翻译" class="headerlink" title="白皮书和翻译"></a>白皮书和翻译</h2><p>DRAFT FOR OPEN COMMUNITY REVIEW AND SUBJECT TO CHANGE<br>初稿供公开社区审查，内容可能会发生变化</p>
+<p>The Nubit White Paper<br>《Nubit 白皮书》<br>Pioneering Data Availability for Bitcoin Ecosystem<br>为比特币生态系统开创性的数据可用性</p>
+<p>Riema Labs Inc.<br>Dec 21, 2023<br>瑞玛实验室股份有限公司<br>2023年12月21日</p>
+<p>Legal Disclaimer<br>Nothing in this white paper constitutes legal, financial, business, or tax advice and you should consult your own legal, financial, tax or other professional adviser before engaging in any activity in connection herewith.<br>Neither Riema Labs nor any of its employees are liable for any kind of direct or indirect damage that you may suffer in connection with accessing this white paper.<br>© 2023 Riema Labs. All Rights Reserved.<br>法律免责声明<br>本白皮书中的任何内容都不构成法律、财务、商业或税务建议，您应在进行与此相关的任何活动之前咨询您自己的法律、财务、税务或其他专业顾问。瑞玛实验室及其员工均不对您因访问本白皮书而可能遭受的任何直接或间接损害承担责任。<br>© 2023 瑞玛实验室。保留所有权利。</p>
+<h3 id="The-Bitcoin-Ecosystem"><a href="#The-Bitcoin-Ecosystem" class="headerlink" title="The Bitcoin Ecosystem"></a>The Bitcoin Ecosystem</h3><p>In 2023, the Bitcoin ecosystem witnessed a significant milestone marked by a surge in registrations, driving a wave of creativity and innovation. The use of ordinals reached an unprecedented 50 million, resulting in transaction fees exceeding $200 million.<br>This surge in registrations has introduced a transformative element to Bitcoin, allowing for the direct embedding of diverse data onto the blockchain. This capability has opened doors to various applications, including digital art, collectibles, and asset tokenization. The newfound versatility has expanded Bitcoin’s functionality and potential use cases.<br>However, the substantial increase in inscription volume has not come without challenges. The impact on the Bitcoin network has been profound, leading to a heightened demand for blockchain space. This surge has influenced transaction fees and prompted the exploration of advancements in scalability and efficiency.<br>To address these challenges, the Bitcoin community has responded with innovations in the infrastructure and protocols of the cryptocurrency. This ongoing development reflects the adaptability of the Bitcoin network in the face of increased demands, pushing the boundaries of what is possible within the blockchain space.</p>
+<h3 id="比特币生态系统"><a href="#比特币生态系统" class="headerlink" title="比特币生态系统"></a>比特币生态系统</h3><p>2023年是比特币生态系统的里程碑之年，受到涌入的注册激发了创造力和创新。Ordinals 的使用激增至5000万，产生了超过2亿美元的交易费用。<br>注册使得能够直接嵌入各种数据到比特币上，为数字艺术、收藏品和资产代币化等用途打开了大门。这种多功能性已经改变了比特币的功能和应用。<br>此外，注册数量的增加显著影响了比特币网络。这导致对区块链空间的需求增加，影响了费用，并促使在可扩展性和效率方面取得进展。这些挑战推动了比特币基础设施和协议的进一步创新。</p>
+<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>The surging demand for Bitcoin inscriptions, leading to over 14GB of data stored at extremely high costs, highlights a pressing need in the Bitcoin ecosystem: an efficient, cost-effective data availability layer. Nubit is designed to address this gap, offering a data availability layer tailored to Bitcoin.<br>The Bitcoin network currently struggles with managing large-scale data and data requiring real-time updates like market prices. These challenges are compounded by high confirmation delays and limited block space.<br>A platform that can effectively handle these data types while maintaining cost efficiency and security is urgently needed.<br>Nubit responds to these challenges by leveraging Bitcoin’s strong security framework and improving its scalability. This approach differs from existing solutions, like Bitcoin Layer 2, which primarily enhances transaction speed. Nubit focuses on efficiently storing and rapidly handling large data.<br>Our objective with Nubit is to evolve Bitcoin beyond its traditional transactional use, enabling it to support a broader range of data-centric applications by providing a secure and scalable data availability layer.</p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>比特币注册需求激增，导致超过14GB的数据以极高的成本存储，突显了比特币生态系统中一个迫切需要的问题：一种高效、经济实惠的数据可用性层。Nubit旨在填补这一差距，为比特币提供定制的数据可用性层。<br>比特币网络目前面临着管理大规模数据和需要实时更新的数据（如市场价格）的困难。这些挑战受到了高确认延迟和有限的区块空间的影响。迫切需要一种能够有效处理这些数据类型并保持成本效益和安全性的平台。<br>Nubit通过充分利用比特币强大的安全框架并提高其可扩展性来应对这些挑战。这种方法与现有解决方案（如比特币第二层）不同，后者主要提高交易速度。Nubit侧重于高效存储和快速处理大量数据。<br>我们使用Nubit的目标是将比特币从传统的交易用途发展，通过提供安全且可扩展的数据可用性层，使其能够支持更广泛的以数据为中心的应用。</p>
+<h3 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h3><p>Reduce Storage Costs with Top-Tier Security Assurance<br>Our primary goal is to drastically reduce storage costs compared to the current approach, aiming for a reduction to 1‰~1% of the existing costs for storing data on Bitcoin.<br>Leveraging the strong academic records of Nubit’s cofounders in formal methods and Web3 security, Nubit will ship crucial components (e.g., Nubit-bridge, etc.) whose security properties will be formally verified through rigorously mathematical<br>reasoning, ensuring secure and user-controlled fund transactions.</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>通过顶级安全保障降低存储成本<br>我们的主要目标是大幅降低存储成本，相较于当前方法，我们的目标是将在比特币上存储数据的成本降低到现有成本的1‰~1%。<br>利用Nubit联合创始人在形式方法和Web3安全性方面的强大学术记录，Nubit将发布关键组件（例如Nubit-bridge，等），其安全性质将通过严密的数学推理进行正式验证，确保安全且用户可控的资金交易。</p>
+<p><img src="/images/image20240109001.png" alt="图1" title="图1"><br>图1：Nubit的多种用例</p>
+<h3 id="Enable-Various-Data-Types"><a href="#Enable-Various-Data-Types" class="headerlink" title="Enable Various Data Types"></a>Enable Various Data Types</h3><p>Nubit is designed to support diverse data types, enhancing the Bitcoin ecosystem’s functionality. This includes:<br>Inscriptions: Allowing storage of digital artifacts like NFTs and BRC-20 JSON texts on the blockchain.<br>Price Feeds: Seamlessly integrate real-time financial data, which is crucial for Bitcoin-based DeFi applications.<br>Rollup Data: Facilitating Layer 2 scaling by enabling storage and management of rollup transaction data.</p>
+<h3 id="实现多种数据类型"><a href="#实现多种数据类型" class="headerlink" title="实现多种数据类型"></a>实现多种数据类型</h3><p>Nubit旨在支持多种数据类型，提升比特币生态系统的功能。这包括：</p>
+<ul>
+<li>注册：允许在区块链上存储数字艺术品，如NFT和BRC-20 JSON文本。</li>
+<li>价格源：无缝集成实时金融数据，这对于基于比特币的DeFi应用至关重要。</li>
+<li>Rollup 数据：通过支持存储和管理滚动事务数据，促进第二层扩展。</li>
+</ul>
+<h3 id="Programmability"><a href="#Programmability" class="headerlink" title="Programmability"></a>Programmability</h3><p>Leveraging smart contracts, Nubit will offer a programmable settlement layer for various data types. This aspect of Nubit’s programmability will enable a range of complex interactions within the Bitcoin ecosystem.<br>For example, it will facilitate the validation of Zero-Knowledge Proofs (ZKPs) for zkOracle and the states of other Bitcoin Layer 2s.</p>
+<h3 id="可编程性"><a href="#可编程性" class="headerlink" title="可编程性"></a>可编程性</h3><p>利用智能合约，Nubit将为各种数据类型提供可编程结算层。Nubit可编程性的这一方面将在比特币生态系统内实现一系列复杂的交互。<br>例如，它将有助于验证零知识证明（ZKP）用于 zkOracle 和其他比特币第二层的状态。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>Nubit serves as a data availability layer for Bitcoin, catering to various use cases and addressing diverse needs within the Bitcoin ecosystem. The current implementation of the Ordinals protocol on Bitcoin involves encoding entire content data into bytes and embedding it within the witness field of SegWit-type transactions. For instance, engraving a 3400-byte Bitcoin Frog image with a network fee rate of 100 sats&#x2F;vB would traditionally cost about 102,600 sats.<br>Nubit introduces a more efficient approach by allowing users to upload the image to Nubit instead of directly inscribing the full image onto the Bitcoin blockchain. Users then inscribe only a 16-byte Data Availability (DA) Tag and a 2-byte special identifier on Bitcoin, totaling a mere 18 bytes. This method significantly reduces the network fee to approximately 16,150 sats for the inscription, offering a substantial cost reduction.<br>The offloading of data to Nubit results in an impressive approximately 90% reduction in network fees and a staggering 99% decrease in the usage of Bitcoin’s block space. This strategic approach not only makes inscriptions more cost-effective but also alleviates the load on the Bitcoin network, presenting a scalable and practical solution.</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>Nubit作为比特币的数据可用性层，可以支持多种用例，满足比特币生态系统内的各种需求。<br>目前在比特币上使用的 Ordinals 协议涉及将整个内容数据编码为字节并嵌入到SegWit类型交易的见证字段中。例如，刻录一幅3400字节的比特币青蛙图像，以100 sats&#x2F;vB的费率，传统上将花费约102,600 sats。<br>Nubit引入了一种更有效的方法。用户无需直接在比特币区块链上刻录完整的图像，而是可以将图像上传到Nubit。然后，他们只需在比特币上刻录16字节的数据可用性（DA）标签和2字节的特殊标识符，总计仅18字节。这种方法将大大降低刻录的网络费用，约为16,150 sats，实现了显著的成本降低。<br>将数据卸载到Nubit导致网络费用约90%的降低，以及对比特币区块空间的使用减少约99%。这一策略使刻录更具成本效益，减轻了比特币网络的负担，提供了一种可扩展且实际的解决方案。</p>
+<p><img src="/images/image20240109002.png" alt="图2" title="图2"><br>图2：Nubit的架构。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;Validator&quot; 是一个名词，通常用来指代在区块链或分布式系统中执行验证的实体。在区块链技术中，验证者是负责验证交易的参与者，确保交易的合法性和一致性。验证者的任务可能包括验证数字签名、检查交易的有效性、参与共识算法等。验证者的存在有助于维护网络的安全性和可靠性。在不同的区块链协议中，验证者的角色和责任可能有所不同。</span><br><span class="line"></span><br><span class="line">&quot;Block Proposing&quot; 是指在区块链中由节点提出新区块的过程。在分布式区块链网络中，有一个节点或一组节点负责提出包含一定数量的交易记录的新区块。这个节点通常通过执行一些共识算法来确定哪些交易将被包含在下一个区块中，并生成区块的相关信息，如区块头、交易列表等。成功提出并添加新区块的节点通常会获得一定的奖励，这是为了鼓励节点参与网络的安全和运作。Block Proposing 是区块链中的一个关键步骤，确保新交易被安全地添加到区块链中。</span><br><span class="line"></span><br><span class="line">&quot;Bridge&quot;（桥接） 桥接可以指连接两个不同的区块链网络的协议或机制。这样的桥接通常用于实现跨链交互，使得资产或信息能够在不同的区块链之间流通。桥接的设计可以包括锁定（将资产锁定在一个链上，以在另一个链上发行相应的代币）或其他技术手段，以确保跨链交互的安全性和可靠性。</span><br><span class="line"></span><br><span class="line">&quot;DA Attestation&quot; 指的是数据可用性证明，通常用于区块链领域。在区块链中，数据可用性是指确保数据在网络上的可用性，即确保数据能够被其他节点访问和验证。</span><br><span class="line"></span><br><span class="line">&quot;Full Node&quot;（全节点）</span><br><span class="line">&quot;Light Node&quot;（轻节点）</span><br><span class="line">&quot;Storage&quot;（存储）</span><br><span class="line">&quot;Fraud Proof&quot;（欺诈证明）是指在区块链或分布式系统中提供的一种机制，用于证明某一方在系统中进行了欺诈行为。这是一种安全机制，用于检测和防止恶意行为，确保系统的正常运作和信任。</span><br><span class="line"></span><br><span class="line">Application  应用</span><br><span class="line">Indexer       索引</span><br><span class="line">Price Oracle   价格预言机</span><br><span class="line">Layer 2        L2</span><br></pre></td></tr></table></figure>
+
+
+<p>In addition to its role as a data availability layer for Bitcoin inscriptions, Nubit plays a crucial role as the data publication and settlement layer for Bitcoin’s oracles. The reliability of price oracles is fundamental for the development of decentralized finance (DeFi) on the Bitcoin network. However, the approximately 10-minute block interval of Bitcoin may not meet the demands of rapidly fluctuating markets. Nubit, with its second-level block interval, can address this issue by providing the speed required for updating price data.<br>Furthermore, smart contracts on Nubit have the capability to validate data published by oracles. By publishing both price data and its proofs on Nubit, it establishes a trustworthy price reference for Bitcoin DeFi applications, which is essential for actions like liquidations.<br>Lastly, in the context of the limited block space of Bitcoin, it becomes impractical to submit all rollup data directly to the Bitcoin blockchain when building Bitcoin Layer 2 solutions. Nubit serves as a data availability layer for various Bitcoin Layer 2s, making it an integral component of the expanding Bitcoin infrastructure. This multifaceted role positions Nubit as a key player in enhancing the efficiency and functionality of the broader Bitcoin ecosystem.<br>此外，Nubit还扮演着比特币预言机的数据发布和结算层的另一个关键角色。可靠的价格预言机对于在比特币上构建DeFi至关重要。然而，比特币的大约10分钟的区块间隔无法满足市场快速波动的需求。由于Nubit的区块间隔在秒级别，它可以适应更新价格数据所需的速度。此外，Nubit上的智能合约可以验证预言机发布的数据。通过在Nubit上发布价格数据及其证明，为比特币DeFi应用提供了可信的价格参考，这对于诸如清算等操作至关重要。<br>最后，由于比特币的区块空间有限，在构建比特币Layer2时，直接将所有滚动数据提交到比特币本身是不切实际的。Nubit还充当各种比特币第二层的数据可用性层。这使得Nubit成为不断扩展的比特币基础设施的一个组成部分。</p>
+<h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><p>The Nubit architecture provides users with the capability to store data on the Data Availability (DA) Layer, while the corresponding DA Tag is stored on the Bitcoin blockchain. Users can perform deposit and withdrawal transactions, typically in BTC, to and from Nubit for fee payments. This design ensures the integrity and immutability of the uploaded data, as well as facilitates the management of fund transactions by enabling Nubit to send transactions to the Bitcoin blockchain.<br>For downstream applications, there is a provision to retrieve the DA Tag based on their specific business requirements. Subsequently, these applications can fetch the original data from Nubit, ensuring that they have access to the complete dataset uploaded by the users. This structured process guarantees that downstream applications can efficiently access and utilize the stored data while leveraging the security and decentralized nature of the Bitcoin blockchain.</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>Nubit架构允许用户将数据存储在数据可用性层（DA Layer）上，同时将相应的DA标签存储在比特币区块链上。用户可以存入或提取资金（通常以BTC为单位）到Nubit用于支付费用。为了确保上传的数据的完整性和不可变性，并管理资金交易，Nubit设计有向比特币区块链发送交易的功能。<br>对于下游应用程序，根据其特定业务需求，可以检索基于DA标签，然后从Nubit获取原始数据。这个过程确保它们可以访问用户上传的完整数据集。</p>
+<h3 id="Validator"><a href="#Validator" class="headerlink" title="Validator"></a>Validator</h3><p>The validator is a crucial component of Nubit, comprising three main sub-components: Block Proposing, DA Attestation, and Bridge. It is responsible for the majority of Nubit’s operations, including processing uploaded data, managing the bridge, and recording roots on the Bitcoin blockchain.</p>
+<h3 id="验证器"><a href="#验证器" class="headerlink" title="验证器"></a>验证器</h3><p>验证器是Nubit的一个关键组件，包括三个主要子组件：区块提议、DA证明和桥接。它负责大部分Nubit的操作，包括处理上传的数据、管理桥接，并在比特币区块链上记录根。</p>
+<h3 id="Block-Proposing-and-DA-Attestation"><a href="#Block-Proposing-and-DA-Attestation" class="headerlink" title="Block Proposing and DA Attestation"></a>Block Proposing and DA Attestation</h3><p>In Nubit, a proposed block’s data initially exists as a soft commitment, recognized by Nubit but not yet permanently committed on the Bitcoin blockchain. During this phase, the data is not retrievable via the DA Tag. The DA Attestation phase, occurring over a defined number of Bitcoin blocks known as the Attestation Interval, involves creating a Merkle Tree of the state and transmitting a transaction to record its root on Bitcoin. Upon confirmation of the corresponding Bitcoin block, the data shifts to a hard commitment status and becomes accessible through the DA Tag, ensuring secure and immutable storage. User-uploaded DA Tags, confirmed in the same or subsequent Bitcoin block, are considered valid references, available for use by other applications.<br>The Attestation Interval is set by the consensus, balancing Bitcoin’s confirmation times and transaction fees. In the quickest scenario, mirroring each Bitcoin block, Nubit conducts DA attestation every Bitcoin block. With an average of 144 blocks proposed daily and an attestation fee of about $15 per block, the annual expenditure is around $0.79 million. This cost can be easily covered by fine-tuning the Attestation Interval or adjusting the fee model. Furthermore, as more users adopt Nubit, the cost per user decreases.</p>
+<h3 id="区块提议和DA证明"><a href="#区块提议和DA证明" class="headerlink" title="区块提议和DA证明"></a>区块提议和DA证明</h3><p>在Nubit中，建议的区块数据最初存在于软承诺状态，由Nubit识别但尚未永久记录在比特币区块链上。在此阶段，数据无法通过DA标签检索。DA证明阶段，发生在一个被称为证明间隔的定义好的比特币区块数量内，涉及创建状态的默克尔树并发送交易以在比特币上记录其根。在确认相应的比特币区块后，数据转为硬承诺状态，并通过DA标签访问，确保安全且不可变的存储。用户上传的DA标签，在相同或后续的比特币区块中确认，被视为有效的引用，可供其他应用程序使用。<br>证明间隔由共识设置，平衡比特币的确认时间和交易费用。在最快的情况下，即每个比特币区块都有一个镜像，Nubit每个比特币区块进行一次DA证明。每天平均提议144个区块，每个区块的证明费用约为15美元，年度支出约为79万美元。通过微调证明间隔或调整费用模型，这个成本可以轻松覆盖。此外，随着更多用户采用Nubit，每用户的成本会降低。</p>
+<p><img src="/images/image20240109003.png" alt="图3" title="图3"><br>图3：验证器的工作流程。</p>
+<h3 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h3><p>Nubit requires users to deposit or withdraw BTC for fee payments. The Bridge component handles these  transactions.<br>Deposits are straightforward, but withdrawals raise security concerns. Bitcoin’s lack of smart  contracts complicates trust in business logic.<br>To address this, Nubit uses an election-based multi-sig wallet  system:</p>
+<ol>
+<li>Each epoch, a signer group is elected by the consensus layer and generates a new multi-sig wallet, with each member holding a share of authorization.</li>
+<li>This group manages all withdrawal requests, creating and signing transactions.</li>
+<li>At the epoch’s end, they must transfer the wallet balance to the next epoch’s new multi-sig wallet.<br>Another concern is the flawless design of this model, as a single overlooked issue could compromise the entire system. To tackle this, the Nubit team will conduct formal verification to assure the security of both the model and its implementation.<br>For instance, a vital invariant of the bridge is: at any time, the sum of deposited BTC shall equal the combined total of BTC consumed and withdrawn by participants and Nubit.</li>
+</ol>
+<h3 id="桥接"><a href="#桥接" class="headerlink" title="桥接"></a>桥接</h3><p>Nubit要求用户存入或提取BTC以支付费用。桥接组件处理这些交易。存款很简单，但提款引起了安全担忧。比特币缺乏智能合约使得对业务逻辑的信任变得复杂。为了解决这个问题，Nubit使用了基于选举的多签钱包系统：</p>
+<ol>
+<li>每个时期，由共识层选出一个签名组，并生成一个新的多签钱包，每个成员持有授权的一部分份额。</li>
+<li>该组管理所有提款请求，创建和签署交易。</li>
+<li>在时期结束时，他们必须将钱包余额转移到下一个时期的新多签钱包。<br> 另一个问题是该模型设计的无缺陷性，因为一个被忽视的问题可能会危及整个系统。为了解决这个问题，Nubit团队将进行形式验证，以确保该模型及其实现的安全性。例如，桥接的一个重要不变性是：任何时候，存入的BTC总额应等于参与者和Nubit消耗和提取的BTC的总和。</li>
+</ol>
+<h3 id="Full-Node"><a href="#Full-Node" class="headerlink" title="Full Node"></a>Full Node</h3><p>Full Nodes play a vital role in upholding the integrity of the network’s data.<br>They are responsible for storing all data and sending block information, including headers and fraud proofs, to Light Nodes.<br>The presence of Full Nodes guarantees the steady availability and dependability of data across the network.</p>
+<h3 id="全节点"><a href="#全节点" class="headerlink" title="全节点"></a>全节点</h3><p>全节点在维护网络数据的完整性方面起着至关重要的作用。<br>它们负责存储所有数据，并向轻节点发送包括区块头和欺诈证明在内的区块信息。<br>全节点的存在确保了网络中数据的稳定可用性和可靠性。</p>
+<p><img src="/images/image20240109004.png" alt="图4" title="图4"><br>图4：桥接通过多签钱包向比特币链发送交易的机制。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Consensus&quot; 在区块链领域指的是网络中各个节点之间就数据的一致性达成共识的过程。</span><br><span class="line"></span><br><span class="line">区块链共识中的提案（Proposal）： 在区块链技术中，特别是涉及到共识机制的协议中，&quot;propose&quot; 通常指的是网络中的节点提出新的区块、交易或其他变更的过程。例如，在 PoW（Proof of Work）共识中，矿工通过解决数学难题来提出新区块。在 PoS（Proof of Stake）共识中，持币者可能通过展示其权益来提出新区块。</span><br><span class="line"></span><br><span class="line">&quot;Withdraw Requirements&quot;（提款要求）</span><br><span class="line">&quot;Signer Group &quot;（签名者组）</span><br><span class="line">&quot;Next Epoch&quot;（下一个纪元）</span><br><span class="line"></span><br><span class="line">&quot;Multi-Sig Wallet&quot; 指的是一个具有多重签名（Multi-Signature）功能的钱包，多重签名钱包是一种特殊类型的数字钱包，需要多个私钥的签名才能执行交易或进行其他操作。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Light-Node"><a href="#Light-Node" class="headerlink" title="Light Node"></a>Light Node</h3><p>Light Nodes allow users to connect directly with the network, eliminating the need for centralized RPC providers. Their main role is keeping track of new block headers and conducting Data Availability Sampling (DAS) on them.</p>
+<h3 id="轻节点"><a href="#轻节点" class="headerlink" title="轻节点"></a>轻节点</h3><p>轻节点允许用户直接连接到网络，消除了对于集中式RPC提供者的需求。它们的主要作用是跟踪新的区块头并在这些区块头上进行数据可用性采样（DAS）。</p>
+<h3 id="Data-Availability-Sampling"><a href="#Data-Availability-Sampling" class="headerlink" title="Data Availability Sampling"></a>Data Availability Sampling</h3><p>In typical blockchain setups, Full Nodes are tasked with the complete verification of blocks, whereas Light Nodes, constrained by their limited capacity, mainly focus on verifying block headers. This division generally results in Light Nodes depending on the broader network consensus. However, the risk of data withholding attacks particularly affects Light Nodes.<br>To mitigate this, Nubit implements DA attestation on the Bitcoin blockchain at regular intervals. This feature guarantees that Light Nodes can authenticate historical headers that have already been committed to the Bitcoin blockchain, which adds an extra layer of security. Each Light Node randomly picks specific sections within a block to check certain data parts and their corresponding Merkle proofs. Receiving accurate responses to these checks suggests that the entire block’s data is accessible. This method, coupled with DA attestation on Bitcoin, empowers Light Nodes to confirm the availability and integrity of data reliably.</p>
+<h3 id="数据可用性采样"><a href="#数据可用性采样" class="headerlink" title="数据可用性采样"></a>数据可用性采样</h3><p>在典型的区块链设置中，全节点负责对区块进行完整的验证，而轻节点由于容量有限，主要关注验证区块头。这种划分通常导致轻节点依赖于更广泛的网络共识。然而，数据扣留攻击的风险尤其影响轻节点。<br>为了减轻这个问题，Nubit定期在比特币区块链上执行DA证明。这个功能确保轻节点可以验证已经提交到比特币区块链上的历史区块头，从而增加了额外的安全层。每个轻节点随机选择区块内的特定部分来检查某些数据部分及其相应的默克尔证明。对这些检查的准确响应表明整个区块的数据是可访问的。这种方法，结合在比特币上的DA证明，使得轻节点能够可靠地确认数据的可用性和完整性。</p>
+<h3 id="Security-Assumptions"><a href="#Security-Assumptions" class="headerlink" title="Security Assumptions"></a>Security Assumptions</h3><p>Nubit’s security model is founded on a set of critical assumptions, each playing a vital role in maintaining the network’s integrity and functionality:<br>Majority of Honest Validators: The integrity of the network hinges on the majority of validators being trustworthy. This ensures reliable bridge operations and block validity. Nubit can use external PoS security providers like BabylonChain to establish an initial economic security threshold.<br>Effective DAS: Light Nodes, alongside Full Nodes, perform DAS to ensure all data is accessible for validation despite Light Nodes not storing the full data.<br>1-to-N Full Node Security Model: With Data Availability Attestation, the data security is maintained as long as one honest Full Node exists. This single honest node guarantees the recovery and verification of all data.</p>
+<h3 id="安全假设"><a href="#安全假设" class="headerlink" title="安全假设"></a>安全假设</h3><p>Nubit的安全模型建立在一系列关键假设的基础上，每个假设在维护网络的完整性和功能方面都起着至关重要的作用：</p>
+<ul>
+<li>大多数诚实的验证者：网络的完整性取决于大多数验证者是值得信赖的。这确保了可靠的桥接操作和区块的有效性。Nubit可以使用外部PoS安全提供者，如BabylonChain，来建立初始的经济安全门槛。</li>
+<li>有效的数据可用性采样：轻节点与全节点一起执行数据可用性采样，确保所有数据可供验证，尽管轻节点没有存储完整的数据。</li>
+<li>1对N的全节点安全模型：通过数据可用性证明，只要存在一个诚实的全节点，数据的安全性就得到了保障。这一个诚实的节点确保了所有数据的恢复和验证。</li>
+</ul>
+<h3 id="Roadmap"><a href="#Roadmap" class="headerlink" title="Roadmap"></a>Roadmap</h3><p>Nubit’s roadmap represents a journey of progressive decentralization, transitioning from a centralized prototype to a fully decentralized and trust-minimized ecosystem.<br>This phased approach is designed to methodically enhance the network’s capabilities while ensuring stability and security.<br>Post-Prototype: Immediately after the prototype stage, Nubit plans to launch the DA Ordinals protocol, a critical step in establishing a strong market presence.<br>Stable DA: During this phase, while maintaining a centralized approach to block proposing and bridge components, Nubit will start integrating centralized DA Attestation and deploying decentralized full nodes.<br>PoS Validator: The focus shifts to decentralizing the process of proposing blocks by utilizing the Proof-of- Stake consensus.<br>Trust Minimization: This final stage is where Nubit fully embraces decentralization across all components, including block proposing, bridge, DA Attestation, and both full and light nodes. This phase represents the culmination of Nubit’s roadmap, achieving a fully decentralized and trust-minimized system.<br>In addition to the launch of DA Ordinals, throughout these stages, Nubit will progressively onboard Oracles and Layer 2s data.</p>
+<h3 id="路线图"><a href="#路线图" class="headerlink" title="路线图"></a>路线图</h3><p>Nubit的路线图代表了从一个集中式原型到一个完全去中心化和最小信任的生态系统的渐进去中心化的旅程。<br>这个分阶段的方法旨在有条不紊地增强网络的功能，同时确保稳定性和安全性。<br>原型后阶段：在原型阶段之后，Nubit计划推出DA Ordinals协议，这是建立强大市场存在的关键一步。<br>稳定的DA：在这个阶段，保持对区块提议和桥接组件的集中式方法的同时，Nubit将开始整合集中式的DA证明并部署去中心化的全节点。<br>PoS验证者：焦点转向通过利用权益证明共识去中心化区块提议过程。<br>信任最小化：这个最后的阶段是Nubit在所有组件，包括区块提议、桥接、DA证明以及全节点和轻节点之间，完全拥抱去中心化的阶段。这个阶段代表了Nubit路线图的巅峰，实现了一个完全去中心化和最小信任的系统。<br>除了推出DA Ordinals之外，在这些阶段中，Nubit还将逐渐接入Oracles和Layer 2s的数据。</p>
+<p><img src="/images/image20240109005.png" alt="图5" title="图5"></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>区块提议</th>
+<th>桥接</th>
+<th>DA证明</th>
+<th>全节点</th>
+<th>轻节点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原型</td>
+<td>集中式</td>
+<td>集中式</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>稳定的DA</td>
+<td>集中式</td>
+<td>集中式</td>
+<td>集中式</td>
+<td>去中心化</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>PoS验证者</td>
+<td>去中心化</td>
+<td>集中式</td>
+<td>集中式</td>
+<td>去中心化</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>信任最小化</td>
+<td>去中心化</td>
+<td>去中心化</td>
+<td>去中心化</td>
+<td>去中心化</td>
+<td>去中心化</td>
+</tr>
+</tbody></table>
+<pre><code>                     表1：Nubit核心组件的路线图。
+</code></pre>
+<p>翻译均为open Ai翻译。<br>项目看来只是初级阶段，我也就关注到这里。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"># 区块链</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/01/03/%E6%88%91%E5%AF%B9bitcoin%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E7%90%86%E8%A7%A3/" rel="prev" title="我对bitcoin的知识点理解">
+                  <i class="fa fa-angle-left"></i> 我对bitcoin的知识点理解
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">kun</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
