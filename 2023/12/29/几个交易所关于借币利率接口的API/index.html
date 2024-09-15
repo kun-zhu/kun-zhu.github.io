@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+    <meta name="description" content="币安，okx交易所有关借币的api对接和总结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几个交易所关于借币利率接口的API">
 <meta property="og:url" content="http://example.com/2023/12/29/%E5%87%A0%E4%B8%AA%E4%BA%A4%E6%98%93%E6%89%80%E5%85%B3%E4%BA%8E%E5%80%9F%E5%B8%81%E5%88%A9%E7%8E%87%E6%8E%A5%E5%8F%A3%E7%9A%84API/index.html">
 <meta property="og:site_name" content="kunzhidao">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="币安，okx交易所有关借币的api对接和总结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-29T13:45:26.000Z">
-<meta property="article:modified_time" content="2024-01-16T11:08:52.347Z">
+<meta property="article:modified_time" content="2024-08-15T08:55:37.975Z">
 <meta property="article:author" content="kun">
 <meta property="article:tag" content="区块链">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -113,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%81%E5%AE%89%E5%80%9F%E5%B8%81%E5%88%A9%E7%8E%87API%E6%8E%A5%E5%8F%A3%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">币安借币利率API接口总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%B4%A8%E6%8A%BC%E5%80%9F%E5%B8%81"><span class="nav-number">1.1.</span> <span class="nav-text">1. 质押借币</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%B4%A8%E6%8A%BC%E5%80%9F%E5%B8%81%EF%BC%88%E6%B4%BB%E6%9C%9F%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2. 质押借币（活期）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-VIP%E5%80%9F%E5%B8%81"><span class="nav-number">1.3.</span> <span class="nav-text">3. VIP借币</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-VIP%E5%80%9F%E5%B8%81%EF%BC%88%E6%9F%A5%E8%AF%A2%E5%80%9F%E6%AC%BE%E5%88%A9%E7%8E%87%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">4. VIP借币（查询借款利率）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E9%80%9A%E8%BF%87%E6%9C%9F%E8%B4%A7%E5%81%9A%E7%A9%BA%E5%B9%B6%E4%B9%B0%E7%8E%B0%E8%B4%A7%E5%AE%9E%E7%8E%B0%E5%80%9F%E6%AC%BE"><span class="nav-number">1.5.</span> <span class="nav-text">5. 通过期货做空并买现货实现借款</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%9D%A0%E6%9D%86%E5%80%9F%E5%B8%81%EF%BC%88%E5%85%A8%E4%BB%93%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">6. 杠杆借币（全仓）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%9D%A0%E6%9D%86%E5%80%9F%E5%B8%81%EF%BC%88%E9%80%90%E4%BB%93%EF%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">7. 杠杆借币（逐仓）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OKX-%E5%80%9F%E8%B4%B7API%E6%8E%A5%E5%8F%A3%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">OKX 借贷API接口总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E5%B8%82%E5%9C%BA%E5%80%9F%E5%B8%81%E6%9D%A0%E6%9D%86%E5%88%A9%E7%8E%87%E5%92%8C%E5%80%9F%E5%B8%81%E9%99%90%E9%A2%9D"><span class="nav-number">2.1.</span> <span class="nav-text">1. 获取市场借币杠杆利率和借币限额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%8E%B7%E5%8F%96%E5%B0%8A%E4%BA%AB%E5%80%9F%E5%B8%81%E6%9D%A0%E6%9D%86%E5%88%A9%E7%8E%87%E5%92%8C%E5%80%9F%E5%B8%81%E9%99%90%E9%A2%9D"><span class="nav-number">2.2.</span> <span class="nav-text">2. 获取尊享借币杠杆利率和借币限额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%8E%B7%E5%8F%96%E8%B5%84%E9%87%91%E8%B4%B9%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text">3. 获取资金费率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%8E%B7%E5%8F%96%E5%85%A8%E9%83%A8%E8%B5%84%E9%87%91%E8%B4%B9%E7%8E%87"><span class="nav-number">2.4.</span> <span class="nav-text">4. 获取全部资金费率</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -125,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -198,7 +199,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-16 19:08:52" itemprop="dateModified" datetime="2024-01-16T19:08:52+08:00">2024-01-16</time>
+      <time title="修改时间：2024-08-15 16:55:37" itemprop="dateModified" datetime="2024-08-15T16:55:37+08:00">2024-08-15</time>
     </span>
 
   
@@ -210,18 +211,126 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="1fda6023c3f5b3a71f04907575268cd47a8e1fd9ec4718441ab05c9d6a1b2c1a">81cc23790d07227520a477c4698b89bb11d663f05775c0189b420003b128ff5ab21e826e504d8b738e84510fe5225bec5807d02e63ae8012ef1dd7ef1d82fd196b2344012c0c096b7380a7db7d079145ef440e1ecd109482c11ae9e78b4da39b44840bdf7ec3a34d3600b521ab0feb6918b689cebbdb391ea371d33ba65bdbd5ad639ff47d114a435f8ca97216576bc283324c4429aac2f58f4da38d0c417b9fc8219ef5dc424ca4d8ff6cc178aad72bb12eb08d26d0222d4db389c226fa048df1088c6e974bd2ae24012c8f9bdda5973c68f7c2ab3baf1f46a3d59745c3a3a5f85055ff678082fe288c23a06737841642c0c6108acd493ca74599ae0cc111022acbc6b915908cd658beefe243e2aeb309272bc0d536eb39882603f6723da413a6a1463a7f6ae6d89b655ed5d9f4f5a8a26d86d137cbd7417b432e80e8a46a33a52e0b44132fa293204adec90ddd2ff3c62a915c9ca4c949395f8dd58ddc6d474c14b30c0d901f28c62785edb37e98b2661339fa5776ad1e9b38f3c040662b8c9ec474d534158112321b7aaef086c80234331d21ddbd4bd8e2b8e3ebcebbd8b7939d8cc73ce48dad434db417077ddbead5011064fa7f27bc95c3491592729ea70b68ea7993bc74185f2d5905c52961cc1fbb8f1c25caa4467edef09e713af6775d5ae641123314966ce8ee88cd479f1c4b69811e53c934c8960bc041b5cbae4f2a029990b8ddf73029508cf2ba8f08447acedda162c02ca64b88f5be5f6983fbcc96fd2cb447edb4d017b4b861c7673aaf6964d16a873d2b344eeb96a3dc4a976805d3e0e036d73aecae522330ba6c203f77d270f3d398d95b03725b4c9a3053dc9d9c09caf264efe46d7d208b909eb361f15e7792ea59efd58560b0f69d27db62249cbe0a428314d8b0742a549675a5079c759e7fa4379722cca93cddfa81a0dd441a46536fec08c69fb8121e42ebd9655f9156d97f6896f2e890054810e1d4c02efb0205e5c3d986730e335fd50a8d179b478f1e9b0f31a0faf3c10c0e69da85bb357e86f289dbb9fe320a711c384555050dbeff7c0851a5eec054f27c0e7f01ea739d4110c1c2eaf1b5776365a0ff60c7c5ea07465eda75fe549e4b33e5426bdcb35cfa3e7392404dafb5f5296e8ec27cd81ceb0ceca9279742031f840ab65259524efaf2cd16fc4ea33af551bbac310b21afe6e184d2d87135d0b5d985f5ff05bb5f447f711badeaff60e327bc5a4a9ca71b20695b541d23dc1846cbd8babc03ddb0c275056997805f88906ac3497c8c821593f530170f3ca15430744fdb82577c9aa18d02d888fabc4a0c7a7844cbe36ef6d59d3513acc4cfcf0f010e100d5534c2dc9bc09deaced7cf8fdedb53d3e54ce4c5fdcf5f01d23b96685599dbc95e28ba5185a43c42508321f79143ad29b6f322c5364cc3a71e31d91ddec10c4b590782fc65ee9d73658cec4a9b712a38a4f53ff02f385a9efbdfc58de78e1a9c1bcd8ab7ea5db064ae3d583b1f9f6a671cda1d0c087ed85ac0f989cccadfbb99089ce022392260e405007ed1a53eae1c44782df24d2a9d0d3d54a4bc13e43084d654fb90a8b463d47706e1b6d64d07e5b3c7769c80651c5b57e30391da2737728fe8c27870a83770243366809b15e6173aceb7a1f1206949e9b77317bd9c46d431f99febebe45b4a82832160f95eb60c173125e4b0cb9fabf28eeffa7577fc97deb1e28f1b77f3a31f954ce476824ef69c3f6d5d13cd178179dbe288904cc7d235f779b244d5480e51da61a342e87d98bd5457fd329e3abfdc4affa0ef2ee02fe72a54b9124aa1347d58e357b67855c44ed198807ee408ffad19a477a88fc0e9d1520f7e071c8cdd5978c60dc4a9bd07680d77fa78702c30e33914abd41db7e9126c0d70038239ca50f6a51d605b5339098e59429cb49b282f4444e38e78261069a8c6d367e7c9411413f5c5865ab15a38de024b8e1106c5b6ed2c83789ab5143872ed29a2cdfe60d24fbdf3fc719626bca14572574e04135b7ae450c384b8db24c1940aa966af211a487bfc4431cee52b70f6dbb9aec2e26441fd5b3d4ae120be70864d7f52173618fd002200d7545e3f27247a2678ba6758141b8243b5e3b301a8b009209d87207d0b4d7dd647ff0d5926f125cd6381686183a16181561c4636f580c1b5077ee1bffa2f3db8b035c2cdd76c107ccd954989170ae0d9e545b22bbb1a83895f47c4861f11ad8a6e0624439e6d5a3c99ee5211e8fd2ebc5aaf9cedfc68cb5759148e3c58a257194f701b3fe0004a09e46523adb3b2b537ecbb287635f179d5b98a08da3041f1c4bbef3df1af102aa01a4d8fbdba0cd0eac842a5dff5892e60197f6e54b7b7f226b5dcc938574bdd54ed2be6d0f919ecf0a92b587f0d4989219e2d2b0f98d1abbde182c0ae3f667715f487033c24e1d8026f047c6ba7ebc9152e973ce6c2d3a004fea0a647990509d7edc0ac2094710ad805779abe7ab7b4207fc1319e0b6f6f7982e9c530d5c68911ad09789f371783a5f93fa25ce48175a33e3309af48f31f9e382d47b8f362adceee1237ed3d860f96cc6c30729a2eb89940f5ef3daad78ed50fd76d333737030799368ee04d8058a46da20e2ecd92b84d3ac4d0c4f65307ffb607bcd2d9eba75ecdfbf8ff01a9a36111bf745427beadb431113f3a0d8020dcb0fe19a0be416f4f2c8ddfa2cec25037b7ecbbb83511d064f1e080c87926917d492ea457927275ff5105fdfd9719f84de9e73ad16f8f90927215af23f861c45ac063ccaa633e8e1bd4d5f7fba0f4130287a523f9bba9d526c945f8d84017d175ca530f97cabe429cbe9159a92cdf4308fae3196e646a44ab88fc3d19d1f671825606034561e0bf3fee49e87cf442676f053b237fe31668e1757504005e156ad229f348b789f16e1c9f4a302716dceae6c7a51f678c6de63a7483af3f4ef1cb7af43623c9afea21e9e9bae827a8b46811fc78beb09e55ab07f7584667a14b1e8fb8c4df28ef5b2a324749356646813ea7ac30e75c9577973e901a7641a0da516fe1a0b5b5931793908ab86c042e11222892f114cc392d8175d421dfa4b782f3f5d0360cb1914cda9db31aeb7af9102cdb8df448ad99f113bf3f5772241053ca422c4b978dc4a5bc20fc8fc3f5dc1e1863cc6f6be2b3eb34a8f9ee2413a77535de9d71097180a7331ab2999d156971511f060ff8763c5b8b60272420903472130e5be5d74a001d0c41a8a3baafacd7d425a908bee785de33683970a4e0e4c97811dda8ab93ce66cbe20306cf4a4d2339e62c84ef1cbac82c1e65b1d134f53e37ff92c672f734a393344ff366eff9231b5b7a67487857ea18934d6c1218b39e63a8563447bd249d964345291213afab1c5e31c553a38fee83aca2c203624f9f8eef13f988b366014272f738f8a6314436c0190aa31e3a687c2fcf261568418b7a971b4e4d1bce34ff16cb1c4139156817a6d6f205f1571d718a666bd0990f18a99d3d0889379169831a95eae35c529c51caff05e179ba951906838b20c1d9138b111d71cb926a7a2a707076e0a062efb231604ecfd913e80d285a2bd62b705ee87070c43b354aa916556b0dfc5ff8114c51ea5994b948b1b07e0c4026951d4bd969316b9c077b5ebf31994af923753c286a799dd1ad5c9d0b06eaca9d368d13d1757b34331194561eafee0d0fc295895a01494aaf6f4053467c624884b6b71a8120bea48c7078c0e2da5f40e8c7605e9da43ee10a5f0bed60d3ba225f8594e0a6c8896e82bc5ac1fcb14268c5ca5a58b81699b4472bc646b619d7b72706642aaeb2bfb0feef591d269bc1bc85bf62837631a9b74c894a7ac420506bb2f16ddfa94b532c09662059861503952cf9456702a37d1a8a89d08eca792a4efb51085d836367ce35b1b2fc41a25bbd2c0a4a3629874cc8c3791452cebea02eb7f5ceced6159a45c3c8abfb2b5656469d03fe9f41ff439c05e45314b58ebbe9b0d51e8226437e602a423470032bea5c1173154a71b03ae0a9ad0ca3f6d923a556632d419a7dab3202789f479ed8fbacfc5c033b6d17a69fab9bb50645535b259a2a3e09244c49bd609cd8cfcb8535e1658a047a6941202435968af90a75dc47f3124a3cec521fbfce6193ab5887ed09ab103ece8e1c0b23018d12de86b6b6e57aaf42be845b9b0cd636b3207e6d4e598f95cc72f98bb7072adaead9e25d07f0f1767dc786f681ff15d059c309da2441e9aa6f0d26cce85af92a787ff5efacacaff13f266b5703626599635571f17c6b799092745a8135a9df83e551b1ed73ebc4babbfab2ede162a6a47b385d41b90c93eb2005150a439705a20b6923c323f57ef0c046cb33ed87f36b4bf65841ddb4119e54e07730b266048b9da7460fe556228768077a085466f70649a010c1b21e00cc8823b87bce531e816c07061d129954dabf62e40caeeeea8e4c52c3b19bf5e889c04aac7d0b2bf102aaa5e60649b67c112eba4933f99c6848158edfee62452f3407a9b25f7c8347370a1a997446f91d15eb6eeccd7957064d2a74fc046be6cfcb607aaf95bf6af24cf9c19b968be855eab2cf0517e1ba1c7ac5db8f288137f13f433d13371f9c1b55aed417f1248ca5453fd5505fd8803df17786552aaaf3c0ffe4d5a38c021bb5a1a7b3769c669dbf3c602a42371f58c119b6290244a158a8fc792a65f75ad7db2035222813a03d25d3e870c62778c2e35ccce6a10cddaa5ec4fb9bff48ed497404fb91531c6cab7b73037b9d14d67f10f2b28cc11e0a33fd61adaf661ef8ac515e9a27390e88b77e292e52895aea39b3e324001c227a1269a7e068c69c0535cf38baaa13002d2b5f801a93d8a8ca7ae576d5f350e4fd60b30b35876b52f9cc5ff218752b8b2f7f90c0550538108118f5b1161ffbc057798a20b1733de6612adf005edb53faeb93aa19d4dd53425cea61075f032384746ec4b928b7436da6026dfa5c0b0e24a6437b4655f99121d8b027b0fab317a54219bfb75cb10ef2ccaf13e0a9a3995e32b258e4decd71313a267b76960e35d0b90e484da65ebff6de5eecc5dfae7df2289396fa139b257dee865c054fda6888c58e02b862ee58c24e86e21f4117c0521fd90b9386d5858a9d4480acdd1e67aa6b5df9e6eb1bde6addb83b8160713f690ca54b2585aaeb99099011e5313e58602d3c2246ffc50fb8938448b0d5ab76ddedbe2fe499a17277d05b9fd6f106dc23c260cf9f7fd1288f6572d8e492c645931e0e0143169cfff27a10221038aad1ec4ba22a397ede18d96a2560faadf725ac036b3c69868ef77bf1a556de433c214f7b5c66a5c9028c30af1bf4018fbd405c2d2ddf70743929eb169a5db2cb608203807278b6a09fb5a91963b68ae8a0acaa29c3831f09623b279d53b271b79986fb933cb8736bda6ce2e0aabde178a82af1b9dddaf96f3df8cc0868e09153276d8de282a8b725c5a12e474424fa6459bd10019b1c71b961b2b66ce4c89c490b1ec91026d0afd65afb237be742b891dd59e6a00a8edc4b75bf1e21a1ca7fc13e6d0ea8b38b4947561a8a5f0a4b71584faaa4c8521b79d79bca82ab4aac9af83ebd1fa751c9b9b720f4bc33848d6054c27ebadc9b3063944db90ff2d0827172c8ba9415b8bca6926750035201a08ce21f7ccceba61dc27d53489218a65e7bdbc07c021028f27f52aab39727b5751f2872213d7b49fcf803f5a9f4add288488745bdf158cd09b24b7c4d221946edda4513b0aca9f5574f7efb89f5616e90a06d9e2964b113960e05b4e7cfc9d6dc26ba2dffeaccf79c7c09e4fd83daaa67324c4c78b05f3a9ef9aa17dcc09b0135ebb63a0f35a74ebdeaf7e803cd84caf33885ff9f91640f763d6807c70a1ec2b6eb6aa3820aa45c48168332e40f14ecaf6fea48f4980682478810180d9bbb11c9815301411b7d43844822c00786c8fa8b10bff83ac295d00b363c5d3d278294117347790c808a43b230f445a2fe98ebd846d3ac58755504cad98fd41a159f17144aee62dee32ed95153100077d1e74a5e70dbca8b23c4a4764474dd90eda512407d0a6d07dadb3014fa68e429dea5dda18f32b53b885bcd180f58e17a01bd47a154f3bb8779a934bd2e46c4bcf39a654c2e079b955afe943f96fec8e542efae0240397725e4b2ee1e34a2dc5c39429e08165c629430ba9c1783e8ee9ad5912e9cd6ce02ef192a66c15d3d157cb4b5f9f3443faa82f8e9adc1bfcb40f4a12d495e573535014a4e9bae743fcd7f6046a731a90666c29894f5e74dc79898eb1a70b414b3f52b488314248b40b703921444697601190c989c862508fd39ff46d03d6e06e6792406c8877736123a04710e494cabaac3a541c8661116cda9b60ffa405c8bc8025570a7539dc640144159496be2e1c4996a3e405ef2696388c0d0305daae83fabbf6eb18f856476c7329087e53e6dc71b7b2d5113605a63477590f5c57e54df30af50c41172da9b9cd1842a5202ad108c5e5211cab8cac2bf2ba80b2bf1cedea15accb9a7e6f373cc9b5ed9b3f4761f423a0309120f0bcee77fc7deeb4c1760e0242b50e8ccfa64a31ea5683f5295c0fbe0c9c0a0e9efbdceb5a1913700acb3bf8cec1d35969fa08f72791464c274660e898516560121222d26f49591e3e5429f6fc35dfb192fb39df375bdcaf878e23566fe3af31c0a1397ad69c5bafe030693eefef0e09c287aad652c20cf202562d7a4f8ef72b27452180504761e0aaaff5f5736c1b6ee3a2a564e8b2792cdeb37612545a94617e159a22af0bdb3d01ecb7910ad71b8c0c9189d74c641f6bab0942bb0ca3c7f2dc8295af4067ebc287685f494ab4c01eaa18173fd4b3acebf0cc0c0ff6dffadb90105ea0f1e815a035c40de34893e01343865dd62804ca22cbd31306fd882a8913fdca22fe4f526155c68cc5b357bdf50a7b2ac35258a8405516f2f79baab4a0577bcbe635df558fea514675901714535be951fc1ea5e36beba939bcf4cd66f5f38af468476c5e4ccf140dc7d9fcdee61acc45df7a4157a75561a3f52b705b0cdc6a72c33b3e9137c2a7cad6933de280f3fdefb0eaca508202b76883999215436fcb8a655a2aeb2c01c9b07732f45cedb10abfa59404c0a24c0661fca6620ee87b743633708e3927aed3dcf82c87e4ecf400dbf6d2da20bc7a81818305e602a6a585a8ef46266aa7e058831617dcf66fd8abd6a3c8a48b7eec3fed8d80ac126c279e48de699e66ab69482c7138b78000a1d1a064be6e12d29dda853964c122e06e2dba81e47f70a3b0ad943059420e028e0371a18be0d0df2f90ab5284625681aa5a20393d77a74f0ef0e0e5578a82adf72483f613a3f2435308f5e9fe9e8724cd0eb44b31759d1f36dbb6a1d059a8d5ea3f5ad6515c7ab9e67752686f354774ecc3be37a18fd37cfb0918c56ebbd6f0ecc7dd49448d3d174a25c60069fcf93d5ecd886dddf190c39d807d205d127e0150e69367558d06cbe51f23b58260762a9c4a2253a78a80983ddcac2dbd652b27b9b71bd2d8604d49d07a448429bc1317d53b70c9f35ccb2832f6fffe146a5073e74bfd4fdb6b13391dd4db23b08fdea03ccb6c872fc56c2b7c31b63cd4e96bc4e129e762832b04d2f0ac7d58e33a0c91faddd352fa1cccbf2a1bead991a7800c556f47a91c205bd351067da0309929422b6a9d1ef2aad3ce318d659a8e6e3b2eef713b2e9840e688e892dd578a6103545d4d5b00541c93c9e4ea8ed02bb513800c32d56706654c37628ebddf5f50425e0431a80fbc1453ed2830e7427076f03e497df0a86dc2fc7334cb8cc5548c93f40ea5f3ac0829056430b8509a3ac1df5e85e54616649ae33121e7255d7d5d1fa19094cd4a3c4f2fb2d0086de7b2af4f20fb6d1c0b55185de1477bd840854f15c9354a055b4285f17df0f18b264fcea315df9eddd7b7c8c906f350b8efe648d02094a844840abd7692060c1a6d2f5f834a0468d0dd502ed6e8f404bbb42737bd853ca185c9f37a0bba04ee635d5a478f8469dbfda762801fdd7de7a9c8761b7e0b0d43de326e0477f23fd08e040d7176b6e733a80abc7e8bc97c709152713a83aaa2fef10110ca2d1e286daf6b50d671891a495db370754da107cdac2e369e933a1ad000ce3b776733ef9876c4de38bc1ff9eedaad9b6fea76f0707925e7c883e1490bfe406621da6b606f755bf61e8f36b56b49e47430d3343337dcf5454d444d27a1034972df88b8ea1dfcf6ccfa3e4c6185a9965f111a48834ede18461d352cc72a8fdfeaff9101f2c43f2368202c3c1c7866545b9121ef7f5dff5a75b31d5997cbce9f9943621f403526e36a30c394bbb593c25887112cc7fa53506724942fc66503b66188025f7f73f1ce5a5cb44cedf5dde0496846113c5d0575e7a993568ecd227ee2cbeb51794b46266d429ad2c01003eeda0e417adbfe6576c1e1f543fc75574bdd03b332080707eb75b781e8662fdc35b6b59f46edc889e9f9c9befd9f02680608849707cd9efc577f708ac634f76185e651e825744da77af130d129f703cd48dc96e7f188d042ae1e07d7922cb7011f9002ec2c53aba93620e74bcf871b368bd5805cb2cd8208d44cc2a2f0b1fad109eb2530e6d70f099c9a394f64cde9eb9bde0d6c6c823f46053636e4fc6e782be6bcebe4f604e8ce68853b07e77ee4e266ea86bc9c20f46e41a8661fb454f92084e1d55ca3f43e706611f657ba72188063c026dd31026c417cd029f0e9bd4e8386e9e781a1f32629e51b821bba50dd4314521e1f9f27198049ded2af12167b6f85b078abbae49b519f45f94623e826887647ccccb9c3f953bc8d98af4ec2233b05ec21f740d79da58f74b188faaf19e9b957b409ef9cf34de4a560884c4278efa58f6d557c2b2996f873985b4c6d81376771b3d943bdf6a4681432f6afb35dc332afbe6546dfbc5299745971694d3cd58baedec6540982e6e359a4f0581431ce9b815037760302d972b9d0eb819dd6177334dc917e66ecc08c1616c8f8dab96072e966634d69005b47c3d2c069c2699df48792229d78468467359cacb41a92730ffc55bfd6c8a34fc71462b4423a4612ac9f49616e3254ae74e9ce8f815ef50e92707cb5bca3fb2669b63e51c4fddb6c672abd83f7793de12c649e03f34a0e0ea67a98020011a04b226137405fdb782b4b9cae6dee86891cc1f8cdb017ec99c87237b0fd48995e36cc76cc1dfd398341fe0d272db8123999e3965d1724fa370eb883ea9d06ac4dd5367ebab80f0222f46af796af40a9ad0fddb0ee94e8ac53fe8c7dc37dbf886f7ab32fafe9c19d0af1801f750ff46ceb7de7977534363f154470b630597812849334149171e9fea0e37bcacd9c47c9e922897f8d29c3e9189d4afbe23ff7356da3c3af9e8c6943c8c52ebc6b8c3ff9abb7c15cac1c61f7d2d2a2b18f0730b2b198a10949f4633aebb811a75a5deb4886f5960f5fef329e59cfd695886190c867dadad99b758f03f2c28715f69d051bdb3ab16bb9c9e8afa8d1dbb80283c127ee4785e0bbebcf092b21732e7366b91af4fd1df53ef21e2982f8b379e446fa220c21adcf980dd62bebf20ab58c4f570bda3d0b152992d0483f313d149d7f448adab9fd50caca7402afb8d723816febf3e969c8cf5929116b9765bf797480cb7ba19aaef66a99cd2b1720167347a85ab9d72128e34d41325da0dbd14de1fca92e5a6265fa76a1220c33feb73dbe1cab4c7277fbf6d9951848fb02303e62a867196d452d6e266836bf8ae9b023d3ca4dd0b58ae09066a5d7b74a7f9fd00471b388677bcd1fee09c56493d0bcdcdb94ede395f4e973aff4450cb0006656c334a4de40ffc862fad8ead4e6c8d30b5ac2324606715f6fca41c65a4061eb948b83a67cc8aec0e69327d6dcb39953a40d09c6e0cb577e3a1edb18b03b7ce4d594cfbe06a83647417ec827ac31dfdcbcad965d94db944144d64f59b7f683620e9d967fc87a5eb4be9fe10e4c73868a5553c00a5a90e6a57495517eaa50e7f1f6c17f01c2b26ad59edb5b8be037999d2b4d438cae61f36ddb614296e04da95ac73afa0b9b85198333c1e0e39ac97f1170d83729fc5f59593a5c18a6b27b70cfdab3291f636725648006e53bab35875aaa18a9ba7006d6b07262e1b2f0fa5f98fadbc3033ce4c5967491c396a46e7899004f6a4f6d5e21607c730d73e7931b533bf01e691611c12c911d22f7c617ac8bf32f77535c902e9adf326c5f54201987ad2bfd4f48787de2f60c7f19da3fbf1282fc4824114e76c6b76db86dd6c06cfe05c56b6abb21638cd2286f65b6e60fb90794654de4d35f7d40775b9e26a68bdae7aee34910fcead503173b4518017f9d89ed47a162f56492435760a809447c5d9e0b9b401f24c94d01de5e4f1f4844e34915c8c922d27450d7c5973a2b3cdbb729e5db910b3517ac514c3760b8c87922a5d9cdc88335f100b215cad999bda216e85fb96abccea4ac608af6eedc6b18d503063f2ccd5019ca2d18c020fdeca0a019026e0eb32cf26a0d2df402375a866b299155c79b4f75664e0acb6862daf63192040b9a7e8ac17c598bcdc8868e1d6938cc53c495d89caea1f58b200a7203e7068d9f8691798a0961c97c1897335d29c527f7131e08758440f6b21cef5855e6c52a0955f3bd881ac51425acfe14b0960d2f7edd1f1b19a0b45c96d539cca6b0dadefcef9aaae73e5178647dfd5508b973e075451428ddfaf9449c3b93e32470cc66205c9daf5f44f6b8ec48ec0fa54ceb54496b74cc501d1c03a2c8a3f77f611ccf2e232c3e6362b013077d7deab4be028a962567c9c5f7b011f5cb6c8cdcc13bec6cf31a70a7c932ec97d99b59f661bcbf8b8143760e5e26f2c471a574407bc823cfb0900da63e9402645716bbbc893abeb8f5a3449ed087acf8d07675882b08bf521482c99b239d1a6902bf8162c49a8e21b3ecb4e40db391a696ee1269e197baac4195586efe37188c21be068091f473a33bce89f79f4b17d7178f028caccdf6e4a14ff0066384abc5c5282a555c86cbe948fc73ab135455169ea6dfd658482c062b2b946d23743106e441b4cd2899c9bdf06848468ffbbef72cbd84c45eebee65f5a150b2740e51a0039a80c8f070a617205b6fa47b55c2796c2ab76cea21f38ffe26ce9085dc741cedfd4092069024c754d7b2d1bc15558a1bd02943f14d5b3256b31f7c87aea43a809bd7d4d8f11af6d4506c860492a456400b48481a9dcfd7d20028901cef1635954bd1836ca26898d29dcac54f2311dd289388d1f9e24b4912d4cfd1f850480d745b4f28e9a58f8c8dbd5469ecf6266c79a5028654f69adb55a8994f01e2f0eb135ff1556f33c935703908dec417bfacdc81e7527f09fd418ced373313a8df55a23e1ef502577a877e39aff017f492f722c22e97e0bc3bf1a318587ff005f62fb090fc27c6e2fd505c85c0d04282d58d1957fc663a51671df28bb3ca0c8ac87c0f6af342e03b1fae4dbc949f68e0f1dc9b8c7ae15b1e38b8475c9f511200d9715ff5d9bba1822dced939524e1432c0b7e932e8cd2ef5cb8e958f7c6d3d86299f7ddde4113c04f48c2170aa74098a7562009d8314dae3374330df7bd352d023c1c6e3fb90c8d08ba5d62e0d1f6e0b15dc5ae7248405f41bfc2d7a31024537b3cf5a515dc2f0d0fd5e36f3b23ac41c5d357105736be5a21a076098c2862b606624500214640417e798a4cca6693470e897cba30237596effa7b300c37c38baeaf9dbdc498f9852f1212387ea4e78610dc3d13ca29c0a296177f14f20e31061f8c8326b0e83860e2a2e15fe82fcd38f7a9cdc06c008b2081b93fd00803166c5d679133486f4b3591077bb641938192125e2d06b9550555ddaa640c7c74f599aaca4e3096beb5bc2165d24a867a191e7b03be93e89cd4374f4b2fd565030695d56c70d19f6794a86ab44b7418793d0e55137955aa7d3eb93780a8300de2a6abd567aa8533aaf46755b69bda2acc52da834271e2cc5e2848fb9d67d8bdcdc28d2675aabb22f0f0dce4141745e337bf2341d4da6f712dd220e79312c853b69ce7b188a9d1b9f3a25b54b2dd0bbe505e75e2d1f26cce6ac0dadde97ba476dd0f5f24e31dfdb1012a5b79fbc09530abd9ea99528c59f76791ca441719c721bcebc65e466662e637e40949b35e82b87b38f8bb1e0f58f3881dff144e8d0fb81beb1f26b600a5bb1b19f2a9f2aa6210838bb5a1f2b21cf96cecdf126bf0243bf43e4f421c040b9d3b174d342d96aee0ec56a75c23101bb465b50e484a59cbfdb041aba3ddbd6f167ec086290472d686654a610e7e368215935da448346b3517fb71fbb8163bda509b43b7616d779179e9f595626ca1b0f4be9b76d9988fcbe5d365d68140f370becc1791b76e7a4db0dfc30c810de7f94c136e95fd98f385db7b11d2b41afcb7c54be1552fd57b0f5108a0f53cf6f5db1ec63d7e288e58f7eb6aa015f1d2ad1c9a5d1abd4c1cd577929b1c120294856d0244cac96825226160e3f3807b3d596820cc07c0317c6ca06db44934748fae7ae82668e46b4775dd511bff91c01c63e822c15d002b629f3723d20b5bec740fb389cbae420a3f78e74794029ffd28674c7b2b898a06bfd1fcaf623212fa6659be0ae8cece352bcd49a4ee3940f941c3f78fc03bec433c7f2645b064e84e9232f0f25e368ee4dd6e17c5f8766b72bc07aa903d396cf53a130e328e6b3d24a7318108e78245c871437898a11b58ca4a3846ec09c9f0b0500e5f70f59e00e38202098c26e29701100938b8d62a542580e4a63540809d5bdc95751f6c5c6a2a228b32f25fc2ad6e9d9ec0e61074171d5d4945ec5d8360c47c3d2e56473ea8f6e3af6a603e441ce10e1f9131214f01dae6e274242139c6cdf0dff2a6983fd440191345f0dcb0b94760adfaf662250081eec226a049a8e32179ee128edf35b1c3f4927314a7da63a6ee045dfcee80312da0f00c8642b66bfbcff3ad525a06629e8fab00566dd0d7d85a8841e7e7bac55d66da3c382401ac514587f46b73b1235acc8ce55e267364dabe76716bbfb7a9ec6c8ec24db0ae73728074e1eecfac328cbc413b5c008c85fb732ca8e3f337fcaa80b0c39720004645094aa2c30fab9de7473b87256cd59b923ea16efaf2f2aa06f1ff575541c4e620aad9a52cc277b3dc7791e3688836011fac2fbff4d798292543efba5d97d5a7559f48e16aa67d95b6d4aefef95b0516ce14bdda632ae9f1c1589c82d2d70d1fa560f237967d5b88adf67d3347fc7f4151d515</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    <div class="post-body" itemprop="articleBody"><p>币安，okx交易所有关借币的api对接和总结。</p>
+<span id="more"></span>
+
+<h1 id="币安借币利率API接口总结"><a href="#币安借币利率API接口总结" class="headerlink" title="币安借币利率API接口总结"></a>币安借币利率API接口总结</h1><p>币安平台提供了多个关于借币利率的API接口，以下是对这些接口的总结。</p>
+<h2 id="1-质押借币"><a href="#1-质押借币" class="headerlink" title="1. 质押借币"></a>1. 质押借币</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getLoanList(String)</code></strong><ul>
+<li><strong>接口说明</strong>：查询可借币种数据 (USER_DATA)</li>
+<li><strong>接口地址</strong>：<code>GET /sapi/v1/loan/loanable/data</code></li>
+<li><strong>实现情况</strong>：官方API已实现</li>
+<li><strong>调用方式</strong>：<br><code>new SpotClientImpl(API_KEY, SECRET_KEY).createCryptoLoans().loanAssetsData(parameters)</code></li>
+<li><strong>参数</strong>：可传入某个币种，不传则默认返回五条数据</li>
+<li><strong>返回</strong>：7天、14天、30天、90天、180天的利率</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-质押借币（活期）"><a href="#2-质押借币（活期）" class="headerlink" title="2. 质押借币（活期）"></a>2. 质押借币（活期）</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getFlexibleLoanList(String)</code></strong><ul>
+<li><strong>接口说明</strong>：查询活期借币可借币种数据 (USER_DATA)</li>
+<li><strong>接口地址</strong>：<code>GET /sapi/v1/loan/flexible/loanable/data</code></li>
+<li><strong>实现情况</strong>：官方API未实现</li>
+<li><strong>参数</strong>：可传入某个币种，不传返回143个币种的活期借币利率（测试日期：2023-12-1）</li>
+<li><strong>返回</strong>：对应币种的活期借款利率</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-VIP借币"><a href="#3-VIP借币" class="headerlink" title="3. VIP借币"></a>3. VIP借币</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getVipLoanList(String)</code></strong><ul>
+<li><strong>接口说明</strong>：查询VIP借币可借币种数据 (USER_DATA)</li>
+<li><strong>接口地址</strong>：<code>GET /sapi/v1/loan/vip/loanable/data</code></li>
+<li><strong>实现情况</strong>：官方API未实现</li>
+<li><strong>参数</strong>：可传入某个币种，不传返回295个币种的活期借币利率（测试日期：2023-12-1）</li>
+<li><strong>返回</strong>：活期、30天、60天的借款利率</li>
+<li><strong>备注</strong>：VIP等级不影响活期贷款利率</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-VIP借币（查询借款利率）"><a href="#4-VIP借币（查询借款利率）" class="headerlink" title="4. VIP借币（查询借款利率）"></a>4. VIP借币（查询借款利率）</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getVipFlexibleLoanList(String)</code></strong><ul>
+<li><strong>接口说明</strong>：查询借款利率 (USER_DATA)</li>
+<li><strong>请求地址</strong>：<code>/sapi/v1/loan/vip/request/interestRate</code></li>
+<li><strong>实现情况</strong>：官方API未实现</li>
+<li><strong>参数</strong>：必须传入某个或者不超过十个的币种，不传会报错</li>
+<li><strong>返回</strong>：对应币种的活期借款利率</li>
+<li><strong>备注</strong>：返回的活期贷款利率可能与其他接口和币安网页不同，考虑不使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-通过期货做空并买现货实现借款"><a href="#5-通过期货做空并买现货实现借款" class="headerlink" title="5. 通过期货做空并买现货实现借款"></a>5. 通过期货做空并买现货实现借款</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getFundingRate(String)</code></strong><ul>
+<li><strong>接口说明</strong>：查询资金费率信息</li>
+<li><strong>请求地址</strong>：<code>/fapi/v1/fundingRate</code></li>
+<li><strong>实现情况</strong>：官方API已实现</li>
+<li><strong>调用方式</strong>：<br><code>new UMFuturesClientImpl().market().fundingRate(parameters);</code></li>
+<li><strong>参数</strong>：可提供某个交易对，不提供则返回最近更改的指定条数的交易对信息</li>
+<li><strong>返回</strong>：对应交易对的起始时间和费率</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-杠杆借币（全仓）"><a href="#6-杠杆借币（全仓）" class="headerlink" title="6. 杠杆借币（全仓）"></a>6. 杠杆借币（全仓）</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getCrossMarginData(String)</code></strong><ul>
+<li><strong>接口说明</strong>：获取全仓杠杆利率及限额 (USER_DATA)</li>
+<li><strong>接口地址</strong>：<code>GET /sapi/v1/margin/crossMarginData</code></li>
+<li><strong>实现情况</strong>：官方API已实现</li>
+<li><strong>调用方式</strong>：<br><code>new SpotClientImpl(API_KEY, SECRET_KEY).createMargin().crossMarginData(parameters);</code></li>
+<li><strong>参数</strong>：可传入某个币种，不传则返回308种币种的数据（测试日期：2023-12-1）</li>
+<li><strong>返回</strong>：对应币种的杠杆借币利率</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-杠杆借币（逐仓）"><a href="#7-杠杆借币（逐仓）" class="headerlink" title="7. 杠杆借币（逐仓）"></a>7. 杠杆借币（逐仓）</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.BinanceApi#getIsolatedMarginData(String)</code></strong><ul>
+<li><strong>接口说明</strong>：获取逐仓杠杆利率及限额 (USER_DATA)</li>
+<li><strong>接口地址</strong>：<code>GET /sapi/v1/margin/isolatedMarginData</code></li>
+<li><strong>实现情况</strong>：官方API已实现</li>
+<li><strong>调用方式</strong>：<br><code>new SpotClientImpl(API_KEY, SECRET_KEY).createMargin().isolatedMarginData(parameters);</code></li>
+<li><strong>参数</strong>：可传入某个交易对，不传则返回576种币种的数据（测试日期：2023-12-1）</li>
+<li><strong>返回</strong>：对应交易对（两个）的杠杆借币利率</li>
+<li><strong>备注</strong>：注意，返回的许多利率是重复的，例如BTCUSDT和ETHUSDT都会返回USDT的借款利率，相同无意义</li>
+</ul>
+</li>
+</ul>
+<h1 id="OKX-借贷API接口总结"><a href="#OKX-借贷API接口总结" class="headerlink" title="OKX 借贷API接口总结"></a>OKX 借贷API接口总结</h1><p>OKX平台在借贷方面提供了几个关键的API接口，以下是对这些接口的总结。</p>
+<h2 id="1-获取市场借币杠杆利率和借币限额"><a href="#1-获取市场借币杠杆利率和借币限额" class="headerlink" title="1. 获取市场借币杠杆利率和借币限额"></a>1. 获取市场借币杠杆利率和借币限额</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.OkxApi#getOkxLoanList</code></strong><ul>
+<li><strong>接口说明</strong>：查询所有币种的借贷利率和借贷限额</li>
+<li><strong>请求地址</strong>：<code>GET /api/v5/public/interest-rate-loan-quota</code></li>
+<li><strong>入参</strong>：无需参数</li>
+<li><strong>返回</strong>：所有币种的借贷利率和借贷限额</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-获取尊享借币杠杆利率和借币限额"><a href="#2-获取尊享借币杠杆利率和借币限额" class="headerlink" title="2. 获取尊享借币杠杆利率和借币限额"></a>2. 获取尊享借币杠杆利率和借币限额</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.OkxApi#getOkxVipLoanList</code></strong><ul>
+<li><strong>接口说明</strong>：查询所有币种的尊享借贷利率和借贷限额</li>
+<li><strong>请求地址</strong>：<code>GET /api/v5/public/vip-interest-rate-loan-quota</code></li>
+<li><strong>入参</strong>：无需参数</li>
+<li><strong>返回</strong>：所有币种的尊享借贷利率和借贷限额</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-获取资金费率"><a href="#3-获取资金费率" class="headerlink" title="3. 获取资金费率"></a>3. 获取资金费率</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.OkxApi#getFundingRate</code></strong><ul>
+<li><strong>接口说明</strong>：查询合约的资金费率</li>
+<li><strong>请求地址</strong>：<code>GET /api/v5/public/funding-rate</code></li>
+<li><strong>入参</strong>：<code>instId</code>（必须，例如：<code>BTC-USD-SWAP</code>）</li>
+<li><strong>返回</strong>：对应交易对的资金费率</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-获取全部资金费率"><a href="#4-获取全部资金费率" class="headerlink" title="4. 获取全部资金费率"></a>4. 获取全部资金费率</h2><ul>
+<li><strong><code>com.kun.loan_scaner.service.api.OkxApi#getFundingRateByMargined</code></strong><ul>
+<li><strong>接口说明</strong>：一次性查询所有币种的资金费率</li>
+<li><strong>请求地址</strong>：<code>GET /priapi/v5/public/funding-rate-all</code></li>
+<li><strong>入参</strong>：<code>t</code>（时间戳），<code>ccyType</code>（币种类型，例如：<code>USDT</code>、<code>USDC</code>、<code>USD</code>）</li>
+<li><strong>返回</strong>：所有币种的资金费率</li>
+</ul>
+</li>
+</ul>
+<p>注：目前OKEX的接口实现主要是Python的，Java的实现尚未找到，需要自行实现。</p>
+
     </div>
 
     
